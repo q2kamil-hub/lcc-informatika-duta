@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Data Terstruktur • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .contoh-box {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .contoh-box strong {
+            color: #1b5e20;
+        }
+        .perbandingan-table th {
+            background: #0b2b5c !important;
+        }
+        .quote-box {
+            background: #f5f0e8;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #3d2e1e;
+            border: 1px solid #d4c5a9;
+        }
+        .quote-box strong {
+            font-style: normal;
+            color: #0b2b5c;
+        }
+        .langkah-box {
+            background: #e3f2fd;
+            border-left: 4px solid #0d47a1;
+            padding: 12px 16px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .langkah-box strong {
+            color: #0d47a1;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.7rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 5px 6px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .quote-box {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">📊 Data Terstruktur</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="data-terstruktur.html">📊 Data Terstruktur</a>
+            </div>
+
+            <h2>📊 Himpunan Data Terstruktur</h2>
+
+            <!-- A. PENDAHULUAN -->
+            <h3>A. PENDAHULUAN</h3>
+            <p>
+                Pernahkah kamu melihat daftar absensi di kelas, jadwal pelajaran, atau daftar nilai ulangan? Semua itu adalah contoh <strong>data terstruktur</strong>. Dalam kehidupan sehari-hari, kita selalu dihadapkan pada berbagai macam data—mulai dari data pribadi teman-teman sekelas, menu makanan di kantin, hingga jadwal kereta api. Untuk bisa mengelola dan memahami semua data ini dengan mudah, kita perlu menyusunnya dengan rapi dan teratur.
+            </p>
+            <p>
+                <strong>Data terstruktur</strong> adalah kumpulan data yang disusun dengan pola atau format tertentu yang jelas, sehingga mudah dibaca, dicari, dan dianalisis, baik oleh manusia maupun komputer. Bayangkan seperti rak buku yang rapi: semua buku disusun berdasarkan kategori (judul, penulis, atau genre). Ketika kita mencari sebuah buku, kita tahu persis di mana mencarinya. Sebaliknya, jika buku-buku itu berserakan, kita akan kesulitan menemukan buku yang kita butuhkan. Prinsip yang sama berlaku untuk data di dunia digital.
+            </p>
+
+            <!-- B. MENGENALI DATA TERSTRUKTUR -->
+            <h3>B. MENGENALI HIMPUNAN DATA TERSTRUKTUR</h3>
+
+            <h4>1. Ciri-Ciri Himpunan Data Terstruktur</h4>
+            <p>Apa yang membuat sebuah kumpulan data disebut "terstruktur"? Berikut adalah ciri-ciri utamanya:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ciri</th>
+                        <th>Penjelasan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>📋 Disusun dalam bentuk tabel</strong></td>
+                        <td>Data diatur dalam baris dan kolom yang rapi, seperti pada spreadsheet atau daftar.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏷️ Setiap data memiliki label atau kategori</strong></td>
+                        <td>Setiap kolom memiliki judul yang menjelaskan jenis data di dalamnya (misalnya: "Nama", "Nilai", "Kelas").</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🔍 Mudah disortir atau dicari</strong></td>
+                        <td>Karena formatnya teratur, kita bisa mengurutkan atau mencari data dengan cepat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📏 Seragam</strong></td>
+                        <td>Setiap baris memiliki format yang sama, sehingga mudah diproses secara konsisten.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>2. Komponen Utama Data Terstruktur</h4>
+            <p>Sebuah himpunan data terstruktur biasanya terdiri dari tiga komponen penting:</p>
+            <ul>
+                <li><strong>📊 Kolom (Field):</strong> Jenis informasi yang ingin dicatat, seperti "Nama", "Usia", atau "Alamat".</li>
+                <li><strong>📄 Baris (Record):</strong> Kumpulan informasi lengkap tentang satu objek atau entitas, misalnya data milik satu siswa (nama, usia, dan alamatnya).</li>
+                <li><strong>📦 Kumpulan Data:</strong> Keseluruhan isi informasi yang disusun secara logis dalam satu kesatuan, misalnya seluruh data siswa dalam satu kelas.</li>
+            </ul>
+
+            <h4>3. Contoh Himpunan Data Terstruktur di Sekolah</h4>
+            <p>Di lingkungan sekolah, kita dapat menemukan banyak contoh data terstruktur:</p>
+            <ul>
+                <li>📋 <strong>Daftar Absensi Siswa:</strong> Terdiri dari kolom Nomor, Nama, dan Tanda Tangan.</li>
+                <li>📊 <strong>Daftar Nilai Rapor:</strong> Terdiri dari kolom Nama Siswa, Mata Pelajaran, dan Nilai.</li>
+                <li>📅 <strong>Jadwal Pelajaran:</strong> Terdiri dari kolom Hari, Jam, dan Mata Pelajaran.</li>
+                <li>📚 <strong>Buku Perpustakaan:</strong> Terdiri dari kolom Judul Buku, Penulis, dan Kode Buku.</li>
+            </ul>
+
+            <h4>4. Contoh Himpunan Data Terstruktur dalam Kehidupan Sehari-hari</h4>
+            <p>Tidak hanya di sekolah, di luar sekolah pun kita sering menemukan data terstruktur:</p>
+            <ul>
+                <li>📱 <strong>Daftar Kontak di Ponsel:</strong> Kolom Nama dan Nomor Telepon.</li>
+                <li>🍽️ <strong>Menu Makanan di Kantin:</strong> Kolom Nama Makanan dan Harga.</li>
+                <li>🚌 <strong>Jadwal Bus atau Kereta:</strong> Kolom Waktu Keberangkatan dan Tujuan.</li>
+                <li>📝 <strong>Formulir Pendaftaran Lomba:</strong> Kolom Nama Lengkap, Kelas, dan Nomor Telepon.</li>
+            </ul>
+
+            <h4>5. Perbandingan Data Terstruktur vs. Data Tidak Terstruktur</h4>
+            <p>Agar lebih jelas, mari kita bandingkan data terstruktur dengan kebalikannya.</p>
+
+            <table class="perbandingan-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Data Terstruktur</th>
+                        <th>Data Tidak Terstruktur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bentuk</strong></td>
+                        <td>Tabel, baris, dan kolom yang rapi.</td>
+                        <td>Tidak teratur, seperti teks bebas, gambar, atau video.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kemudahan Dicari</strong></td>
+                        <td>Sangat mudah.</td>
+                        <td>Sulit, perlu usaha ekstra untuk menemukan informasi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contoh</strong></td>
+                        <td>Daftar nilai siswa, daftar kontak HP.</td>
+                        <td>Chat WhatsApp yang acak, tulisan tangan yang tidak rapi, foto, atau video.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- C. MENERAPKAN BERPIKIR KOMPUTASIONAL -->
+            <h3>C. MENERAPKAN BERPIKIR KOMPUTASIONAL PADA DATA STRUKTUR</h3>
+            <p>
+                Kemampuan untuk mengelola dan menganalisis data terstruktur adalah bagian penting dari <strong>berpikir komputasional</strong>. Berpikir komputasional adalah cara berpikir untuk menyelesaikan persoalan dengan cara yang efektif dan efisien, yang jika dikembangkan, dapat dilakukan oleh komputer. Salah satu area penting dalam berpikir komputasional adalah <strong>struktur data</strong>.
+            </p>
+
+            <h4>1. Contoh Kasus 1: Mencatat Peminjaman Ruang Kelas</h4>
+            <div class="contoh-box">
+                <p style="margin-bottom:0;">
+                    <strong>📋 Kasus:</strong> Ferdin bertugas mencatat peminjaman ruang kelas untuk kegiatan ekstrakurikuler. Terdapat dua belas ruang kelas, yaitu ruang A sampai dengan L. Catatan peminjaman untuk hari Senin dan Selasa adalah sebagai berikut:
+                </p>
+                <ul style="margin-bottom:0;">
+                    <li><strong>Senin:</strong> Ruang A, C, F, I, dan K</li>
+                    <li><strong>Selasa:</strong> Ruang A, D, J, K, dan L</li>
+                </ul>
+            </div>
+            <p><strong>Pertanyaan:</strong> Berapa banyak ruang yang <strong>tidak pernah dipinjam</strong> pada hari Senin maupun Selasa?</p>
+
+            <p><strong>Langkah Penyelesaian dengan Berpikir Komputasional:</strong></p>
+
+            <div class="langkah-box">
+                <p style="margin-bottom:0;"><strong>1. Memahami Data:</strong> Pertama, kita ubah catatan yang masih berupa daftar terpisah menjadi data terstruktur yang lebih mudah dibaca, misalnya dalam bentuk tabel.</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hari</th>
+                        <th>Ruang yang Dipinjam</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Senin</strong></td>
+                        <td>A, C, F, I, K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Selasa</strong></td>
+                        <td>A, D, J, K, L</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="langkah-box">
+                <p style="margin-bottom:0;"><strong>2. Menggabungkan Data:</strong> Langkah selanjutnya adalah menggabungkan data dari Senin dan Selasa untuk mengetahui semua ruang yang pernah dipinjam.</p>
+                <p style="margin-bottom:0; margin-top:4px;">
+                    <strong>Senin dan Selasa =</strong> A, C, D, F, I, J, K, dan L
+                </p>
+            </div>
+
+            <div class="langkah-box">
+                <p style="margin-bottom:0;"><strong>3. Membandingkan dan Menyimpulkan:</strong> Kita tahu total ruang adalah A sampai L (12 ruang). Dengan membandingkan daftar gabungan dengan daftar semua ruang, kita bisa mencari ruang yang tidak ada dalam daftar gabungan.</p>
+                <ul style="margin-bottom:0; margin-top:4px;">
+                    <li><strong>Semua ruang:</strong> A, B, C, D, E, F, G, H, I, J, K, L</li>
+                    <li><strong>Ruang yang dipinjam:</strong> A, C, D, F, I, J, K, L</li>
+                    <li><strong>✅ Ruang yang tidak pernah dipinjam: B, E, G, H</strong></li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background:#e8f5e9; border-left-color:#2e7d32;">
+                <p style="margin-bottom:0;">
+                    <strong>🎯 Kesimpulan:</strong> Ada <strong>4 ruang</strong> (B, E, G, dan H) yang tidak pernah dipinjam pada hari Senin maupun Selasa.
+                </p>
+            </div>
+
+            <h4>2. Contoh Kasus 2: Memecahkan Teka-Teki Kata</h4>
+            <div class="contoh-box">
+                <p style="margin-bottom:0;">
+                    <strong>🧩 Kasus:</strong> Dimas mengirimkan sebuah kata rahasia kepada Dian dalam bentuk kartu-kartu. Terdapat beberapa kartu dengan dua huruf (atas dan bawah) dan satu kartu dengan satu huruf. Petunjuknya adalah:
+                </p>
+                <ol style="margin-bottom:0;">
+                    <li>Bagian atas setiap kartu memiliki kotak hitam.</li>
+                    <li>Huruf di bagian bawah harus ditulis <strong>sebelum</strong> huruf di bagian atas.</li>
+                    <li>Hanya ada satu kartu dengan satu huruf.</li>
+                </ol>
+            </div>
+            <p><strong>Tantangan:</strong> Tentukan kata yang dikirimkan Dimas.</p>
+
+            <p><strong>Langkah Penyelesaian dengan Berpikir Komputasional:</strong></p>
+
+            <div class="langkah-box">
+                <p style="margin-bottom:0;"><strong>1. Mengidentifikasi Pola:</strong> Masalah ini seperti menyusun puzzle. Setiap kartu memberikan petunjuk urutan: huruf bawah → huruf atas. Ini adalah representasi data yang tidak terstruktur (kartu acak) yang harus kita ubah menjadi struktur yang bermakna (urutan kata).</p>
+            </div>
+
+            <div class="langkah-box">
+                <p style="margin-bottom:0;"><strong>2. Mencari Titik Awal:</strong> Petunjuk kunci adalah "hanya ada satu kartu dengan satu huruf". Huruf pada kartu itulah yang menjadi <strong>huruf pertama</strong> dalam rangkaian kata.</p>
+            </div>
+
+            <div class="langkah-box">
+                <p style="margin-bottom:0;"><strong>3. Menyusun Urutan:</strong> Setelah menemukan huruf pertama (misalnya, K), kita cari kartu lain yang memiliki huruf K di bagian atas. Huruf di bagian bawah kartu tersebut adalah huruf kedua. Lalu, cari kartu yang memiliki huruf kedua di bagian atas, dan seterusnya, hingga semua kartu terpakai.</p>
+            </div>
+
+            <div class="langkah-box">
+                <p style="margin-bottom:0;"><strong>4. Hasil Akhir:</strong> Dengan mengikuti langkah ini, rangkaian kata yang terbentuk adalah <strong>"KOMPUTASI"</strong>.</p>
+            </div>
+
+            <div class="highlight-box" style="background:#f3e5f5; border-left-color:#6a1b9a;">
+                <p style="margin-bottom:0;">
+                    💡 Kedua contoh kasus di atas menunjukkan bahwa data yang awalnya tidak terstruktur (catatan acak, kartu terpisah) dapat diolah dengan cara berpikir komputasional (mengidentifikasi pola, menyusun langkah, mengorganisasi data) untuk menghasilkan solusi yang tepat. Ini adalah keterampilan dasar dalam menyelesaikan persoalan yang mengandung himpunan data berstruktur sederhana dengan volume kecil.
+                </p>
+            </div>
+
+            <!-- D. RANGKUMAN -->
+            <h3>D. RANGKUMAN</h3>
+            <ul>
+                <li>📊 <strong>Data terstruktur</strong> adalah kumpulan data yang disusun dengan pola atau format yang jelas (seperti tabel dengan baris dan kolom), sehingga mudah dibaca, dicari, dan dianalisis.</li>
+                <li>📋 <strong>Ciri-ciri</strong> data terstruktur meliputi: disusun dalam bentuk tabel, memiliki label/kategori, mudah disortir, dan seragam formatnya.</li>
+                <li>📦 <strong>Komponen utama</strong> data terstruktur adalah kolom (field), baris (record), dan kumpulan data secara keseluruhan.</li>
+                <li>📱 <strong>Contoh data terstruktur</strong> dalam kehidupan sehari-hari sangat banyak, seperti daftar absensi, jadwal pelajaran, daftar nilai, menu makanan di kantin, dan daftar kontak di ponsel.</li>
+                <li>🧠 <strong>Berpikir komputasional</strong> dapat diterapkan untuk menyelesaikan persoalan yang melibatkan data terstruktur, misalnya dengan menyusun data dalam tabel, menggabungkan informasi, membandingkan, dan mencari pola untuk menemukan solusi.</li>
+            </ul>
+
+            <!-- QUOTE -->
+            <div class="quote-box">
+                "Kemampuan untuk menata, membaca, dan menganalisis data terstruktur adalah fondasi dari literasi data. Di era informasi, keterampilan ini sama pentingnya dengan keterampilan membaca dan menulis."
+            </div>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-data-terstruktur.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

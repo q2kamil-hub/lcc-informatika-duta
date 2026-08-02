@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Ruang Publik Virtual • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .karakteristik-box {
+            background: #e3f2fd;
+            border-left: 6px solid #0d47a1;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .karakteristik-box strong {
+            color: #0d47a1;
+        }
+        .jenis-table th {
+            background: #0b2b5c !important;
+        }
+        .quote-box {
+            background: #f5f0e8;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #3d2e1e;
+            border: 1px solid #d4c5a9;
+        }
+        .quote-box strong {
+            font-style: normal;
+            color: #0b2b5c;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.7rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 5px 6px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .quote-box {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">🌍 Ruang Publik Virtual</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="ruang-virtual.html">🌍 Ruang Publik Virtual</a>
+            </div>
+
+            <h2>🌍 Ruang Publik Virtual</h2>
+
+            <!-- A. PENDAHULUAN -->
+            <h3>A. PENDAHULUAN</h3>
+            <p>
+                Pernahkah kamu merasa seperti berada di sebuah "tempat" saat sedang mengobrol di grup WhatsApp, berdiskusi di forum online, atau bahkan saat bermain game bersama teman-teman dari kota lain? Tempat-tempat ini memang tidak memiliki bangunan fisik, tetapi tetap terasa nyata karena memungkinkan kita bertemu, berinteraksi, dan bertukar gagasan dengan banyak orang. Inilah yang disebut sebagai <strong>ruang publik virtual</strong>.
+            </p>
+            <p>
+                <strong>Ruang publik virtual</strong> adalah platform digital yang dapat diakses banyak orang untuk melakukan komunikasi, pertukaran informasi, dan kolaborasi secara daring. Di ruang ini, setiap individu dapat berperan sebagai pembuat sekaligus penerima informasi. Ruang publik virtual menciptakan lingkungan sosial baru di dunia digital, di mana norma dan aturan etika juga harus diterapkan sebagaimana dalam kehidupan nyata.
+            </p>
+            <div class="highlight-box" style="background:#fef9e7; border-left-color:#b8730e;">
+                <p style="margin-bottom:0;">
+                    💡 Bayangkan ruang publik virtual seperti <strong>alun-alun kota di dunia maya</strong>. Di alun-alun, siapa pun bisa datang, bertemu, berbicara, dan menyampaikan pendapat. Begitu pula di ruang publik virtual—ia menjadi tempat berkumpulnya masyarakat digital untuk berbagai keperluan.
+                </p>
+            </div>
+
+            <!-- B. JENIS-JENIS RUANG PUBLIK VIRTUAL -->
+            <h3>B. JENIS-JENIS RUANG PUBLIK VIRTUAL</h3>
+            <p>Berdasarkan berbagai sumber, ruang publik virtual dapat dikelompokkan ke dalam beberapa jenis utama sesuai dengan fungsinya:</p>
+
+            <h4>1. Ruang Sosial (Media Sosial)</h4>
+            <p>
+                <strong>Media sosial</strong> adalah ruang publik virtual yang paling akrab dengan kehidupan sehari-hari kita. Platform seperti Facebook, Instagram, TikTok, dan Twitter/X digunakan untuk berbagi informasi, opini, pengalaman, serta mengekspresikan diri kepada publik luas.
+            </p>
+            <div class="karakteristik-box">
+                <p style="margin-bottom:0;"><strong>📋 Karakteristik:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li>Bersifat terbuka dan dapat diakses siapa saja (dengan atau tanpa akun tertentu)</li>
+                    <li>Mendukung berbagai bentuk konten: teks, foto, video, dan audio</li>
+                    <li>Memungkinkan interaksi dua arah melalui fitur komentar, like, dan share</li>
+                </ul>
+            </div>
+            <p><strong>Contoh pemanfaatan:</strong></p>
+            <ul>
+                <li>📢 Menyebarkan informasi tentang acara sekolah melalui akun OSIS</li>
+                <li>🏆 Berbagi hasil karya atau prestasi</li>
+                <li>📚 Mengikuti akun edukasi untuk belajar hal baru</li>
+            </ul>
+
+            <h4>2. Forum Diskusi Online</h4>
+            <p>
+                Forum diskusi online adalah tempat berkumpulnya komunitas yang memiliki minat atau topik tertentu. Di sini, pengguna dapat berdiskusi, bertukar gagasan, dan belajar dari sudut pandang yang berbeda.
+            </p>
+            <div class="karakteristik-box">
+                <p style="margin-bottom:0;"><strong>📋 Karakteristik:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li>Terstruktur berdasarkan topik atau kategori tertentu</li>
+                    <li>Diskusi bersifat lebih mendalam dan terarah</li>
+                    <li>Biasanya memiliki aturan dan moderator</li>
+                </ul>
+            </div>
+            <p><strong>Contoh:</strong></p>
+            <ul>
+                <li>🌐 <strong>Reddit</strong> (forum global dengan berbagai sub-topik)</li>
+                <li>🇮🇩 <strong>Kaskus</strong> (forum komunitas Indonesia)</li>
+                <li>📖 Forum diskusi di website pembelajaran atau komunitas hobi</li>
+            </ul>
+            <p>
+                Dari perspektif akademik, forum diskusi online memungkinkan terciptanya ruang yang <strong>inklusif, deliberatif, dan partisipatif</strong> di mana publik dapat berdiskusi satu sama lain secara terbuka.
+            </p>
+
+            <h4>3. Platform Kolaborasi Digital dan Pembelajaran Daring</h4>
+            <p>
+                Platform ini digunakan untuk kerja sama dalam pembelajaran, proyek, dan komunikasi profesional secara daring. Ruang ini memungkinkan orang-orang dari berbagai lokasi untuk bekerja bersama dalam satu "ruang kerja" virtual.
+            </p>
+            <div class="karakteristik-box">
+                <p style="margin-bottom:0;"><strong>📋 Karakteristik:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li>Mendukung kerja sama tim secara real-time</li>
+                    <li>Memiliki fitur berbagi file dan dokumen</li>
+                    <li>Sering digunakan dalam konteks pendidikan atau profesional</li>
+                </ul>
+            </div>
+            <p><strong>Contoh:</strong></p>
+            <ul>
+                <li>📚 <strong>Google Classroom</strong> (pembelajaran daring)</li>
+                <li>👔 <strong>Microsoft Teams</strong> (kolaborasi tim)</li>
+                <li>💬 <strong>Slack</strong> (komunikasi profesional)</li>
+                <li>🏫 <strong>E-learning sekolah</strong></li>
+            </ul>
+
+            <h4>4. Aplikasi Pesan Publik dan Blog</h4>
+            <p>
+                Aplikasi pesan publik dan blog digunakan untuk menyebarkan tulisan, ide, maupun informasi secara luas kepada masyarakat digital.
+            </p>
+            <div class="karakteristik-box">
+                <p style="margin-bottom:0;"><strong>📋 Karakteristik:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li>Memungkinkan komunikasi satu-ke-banyak</li>
+                    <li>Dapat bersifat terbuka untuk umum</li>
+                    <li>Sering digunakan sebagai media ekspresi dan publikasi</li>
+                </ul>
+            </div>
+            <p><strong>Contoh:</strong></p>
+            <ul>
+                <li>✍️ <strong>Medium</strong> dan <strong>WordPress</strong> (platform blog)</li>
+                <li>📢 <strong>Telegram Channel</strong> (saluran siaran publik)</li>
+                <li>💬 <strong>WhatsApp Group</strong> dan <strong>LINE Group</strong> yang bersifat terbuka</li>
+            </ul>
+
+            <h4>5. Ruang Hiburan Digital dan Pengalaman Imersif</h4>
+            <p>
+                Perkembangan teknologi juga melahirkan ruang publik virtual di dunia hiburan. Game online, konser virtual, hingga pengalaman realitas virtual (VR) dan augmented reality (AR) menjadi tempat di mana orang-orang berkumpul dan berinteraksi secara digital.
+            </p>
+            <div class="karakteristik-box">
+                <p style="margin-bottom:0;"><strong>📋 Karakteristik:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li>Menawarkan pengalaman interaktif dan imersif</li>
+                    <li>Memungkinkan pertemuan antar pemain dari berbagai wilayah</li>
+                    <li>Sering memiliki elemen sosial dan komunitas</li>
+                </ul>
+            </div>
+            <p><strong>Contoh:</strong></p>
+            <ul>
+                <li>🎮 Game online multipemain</li>
+                <li>🎵 Konser virtual</li>
+                <li>🕶️ Ruang pertemuan di dunia metaverse</li>
+            </ul>
+
+            <!-- C. KARAKTERISTIK UNIK -->
+            <h3>C. KARAKTERISTIK UNIK RUANG PUBLIK VIRTUAL</h3>
+            <p>Ruang publik virtual memiliki beberapa karakteristik yang membedakannya dari ruang publik fisik (seperti taman kota atau alun-alun):</p>
+
+            <div class="karakteristik-box" style="background:#fce4ec; border-left-color:#c62828;">
+                <p style="margin-bottom:0;"><strong>1. Respon Cepat dan Spontan</strong></p>
+                <p style="margin-bottom:0;">
+                    Berbeda dengan diskusi tatap muka yang membutuhkan waktu dan perencanaan, interaksi di ruang publik virtual cenderung bersifat cepat dan instan. Ini adalah hasil dari "ledakan waktu sesaat" di mana emosi dan tanggapan langsung terpampang di layar gadget.
+                </p>
+            </div>
+
+            <div class="karakteristik-box" style="background:#fff3e0; border-left-color:#e65100;">
+                <p style="margin-bottom:0;"><strong>2. Tanpa "Penjaga Gerbang" (Gatekeeper)</strong></p>
+                <p style="margin-bottom:0;">
+                    Di ruang publik fisik, sering ada pihak yang menyaring informasi sebelum sampai ke publik (seperti editor di media cetak). Di ruang publik virtual, hampir semua orang dapat menyampaikan gagasannya secara langsung tanpa melalui kurator atau penyaring. Jarak antara apa yang dibicarakan dan publik menjadi sangat pendek.
+                </p>
+            </div>
+
+            <div class="karakteristik-box" style="background:#e8f5e9; border-left-color:#2e7d32;">
+                <p style="margin-bottom:0;"><strong>3. Ruang yang "Seakan" Terbuka</strong></p>
+                <p style="margin-bottom:0;">
+                    Meskipun ruang publik virtual terlihat sangat terbuka dan demokratis, sebenarnya setiap pengguna cenderung membangun "koridor informasi" sendiri berdasarkan selera dan preferensi pribadi. Akibatnya, kita bisa terperangkap dalam gelembung informasi yang hanya menampilkan hal-hal yang sesuai dengan pandangan kita.
+                </p>
+            </div>
+
+            <!-- D. MENGAPA PENTING -->
+            <h3>D. MENGAPA RUANG PUBLIK VIRTUAL PENTING?</h3>
+            <p>Ruang publik virtual menjadi semakin penting karena beberapa alasan:</p>
+            <ul>
+                <li><strong>🌉 Menjembatani Keterbatasan Fisik:</strong> Orang-orang dari berbagai kota bahkan negara dapat bertemu dan berinteraksi tanpa harus bertatap muka.</li>
+                <li><strong>🗣️ Mendorong Partisipasi:</strong> Ruang publik virtual memberikan kesempatan bagi siapa pun untuk menyuarakan pendapat dan terlibat dalam diskusi publik.</li>
+                <li><strong>🤝 Mendukung Kolaborasi:</strong> Memungkinkan kerja sama dalam proyek, pembelajaran, dan kegiatan sosial tanpa batasan lokasi.</li>
+                <li><strong>📚 Akses Informasi yang Lebih Luas:</strong> Memudahkan akses terhadap berbagai informasi yang sebelumnya sulit dijangkau.</li>
+            </ul>
+
+            <!-- E. RANGKUMAN -->
+            <h3>E. RANGKUMAN</h3>
+            <ul>
+                <li>🌐 <strong>Ruang publik virtual</strong> adalah platform digital yang dapat diakses banyak orang untuk komunikasi, pertukaran informasi, dan kolaborasi secara daring. Ia seperti alun-alun kota di dunia maya.</li>
+                <li>📋 <strong>Jenis-jenis ruang publik virtual</strong> meliputi:
+                    <ul>
+                        <li><strong>Media Sosial</strong> (Facebook, Instagram, TikTok) untuk berbagi informasi dan ekspresi diri.</li>
+                        <li><strong>Forum Diskusi Online</strong> (Reddit, Kaskus) untuk bertukar gagasan dalam komunitas tertentu.</li>
+                        <li><strong>Platform Kolaborasi Digital</strong> (Google Classroom, Microsoft Teams) untuk pembelajaran dan kerja sama daring.</li>
+                        <li><strong>Aplikasi Pesan Publik dan Blog</strong> (Medium, WordPress, Telegram Channel) untuk menyebarkan tulisan dan ide.</li>
+                        <li><strong>Ruang Hiburan Digital</strong> (game online, konser virtual, VR/AR) untuk interaksi sosial dan pengalaman imersif.</li>
+                    </ul>
+                </li>
+                <li>✨ <strong>Karakteristik uniknya</strong> antara lain: respon cepat dan spontan, tanpa penyaring informasi (gatekeeper), serta kecenderungan menciptakan "koridor informasi" berdasarkan selera pribadi.</li>
+                <li>💡 Ruang publik virtual menjadi penting karena <strong>menjembatani keterbatasan fisik, mendorong partisipasi publik, mendukung kolaborasi, dan memperluas akses informasi</strong>.</li>
+                <li>⚖️ Meskipun berbeda dengan ruang fisik, ruang publik virtual tetap memerlukan <strong>penerapan norma dan etika</strong> yang sama seperti saat kita berinteraksi di dunia nyata.</li>
+            </ul>
+
+            <!-- QUOTE -->
+            <div class="quote-box">
+                "Ruang publik virtual adalah alun-alun abad ke-21. Di sinilah kita bertemu, berbicara, dan membangun peradaban digital bersama—tanpa terbatas oleh jarak dan waktu."
+            </div>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-ruang-virtual.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

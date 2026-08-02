@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Jaringan Lokal • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .tips-box {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .tips-box strong {
+            color: #1b5e20;
+        }
+        .manfaat-table th {
+            background: #0b2b5c !important;
+        }
+        .quote-box {
+            background: #f5f0e8;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #3d2e1e;
+            border: 1px solid #d4c5a9;
+        }
+        .quote-box strong {
+            font-style: normal;
+            color: #0b2b5c;
+        }
+        .komponen-box {
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-left: 4px solid #0d47a1;
+        }
+        .komponen-box strong {
+            color: #0d47a1;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.7rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 5px 6px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .quote-box {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">📶 Jaringan Lokal (LAN)</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="jaringan-lokal.html">📶 Jaringan Lokal</a>
+            </div>
+
+            <h2>📶 Memahami Jaringan Komputer &amp; LAN</h2>
+
+            <!-- A. PENDAHULUAN -->
+            <h3>A. PENDAHULUAN</h3>
+            <p>
+                Pernahkah kamu memperhatikan di laboratorium komputer sekolah, semua komputer bisa terhubung ke satu printer yang sama? Atau bagaimana guru bisa mengirim file tugas ke semua komputer siswa sekaligus? Semua itu dimungkinkan berkat <strong>jaringan komputer</strong>, khususnya jaringan lokal.
+            </p>
+            <p>
+                <strong>Jaringan komputer</strong> adalah kumpulan dua atau lebih komputer beserta perangkat-perangkat lain yang dihubungkan agar dapat saling berkomunikasi dan bertukar informasi, sehingga menciptakan efisiensi dan optimalisasi dalam kerja. Singkatnya, jaringan adalah "jembatan" yang menghubungkan perangkat-perangkat elektronik agar bisa saling berbagi data dan sumber daya.
+            </p>
+
+            <!-- B. JENIS-JENIS JARINGAN -->
+            <h3>B. JENIS-JENIS JARINGAN KOMPUTER BERDASARKAN JANGKAUAN</h3>
+            <p>Berdasarkan jarak dan ruang lingkupnya, jaringan komputer dibagi menjadi tiga kelompok utama:</p>
+
+            <h4>1. Local Area Network (LAN) - Jaringan Lokal</h4>
+            <p>
+                LAN adalah jaringan milik pribadi yang beroperasi di dalam ruang lingkup yang terbatas, seperti dalam satu bangunan rumah, kantor, sekolah, atau pabrik. LAN merupakan jaringan berkecepatan tinggi dengan tingkat kesalahan (error) yang rendah karena hanya mencakup area yang kecil.
+            </p>
+            <div class="highlight-box" style="background:#e3f2fd; border-left-color:#0d47a1;">
+                <p style="margin-bottom:0;"><strong>📋 Karakteristik LAN:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li>📍 Mencakup area geografis kecil (satu gedung atau kampus)</li>
+                    <li>⚡ Kecepatan transfer data tinggi (10, 100, hingga 1000 Mbit/s)</li>
+                    <li>📉 Tingkat kesalahan pengiriman data rendah</li>
+                    <li>🔌 Biasanya menggunakan kabel sebagai saluran utama, meskipun LAN nirkabel (Wi-Fi) juga mulai banyak digunakan</li>
+                </ul>
+            </div>
+            <p><strong>Contoh penerapan LAN:</strong></p>
+            <ul>
+                <li>🖥️ Jaringan komputer di laboratorium sekolah</li>
+                <li>🏢 Komputer-komputer di sebuah kantor yang terhubung ke satu printer</li>
+                <li>🏠 Jaringan WiFi di rumah yang menghubungkan ponsel, laptop, dan smart TV</li>
+            </ul>
+
+            <h4>2. Metropolitan Area Network (MAN) - Jaringan Metropolitan</h4>
+            <p>
+                MAN pada dasarnya adalah versi LAN yang berukuran lebih besar. Jangkauannya mencakup area sebuah kota atau antar kantor perusahaan yang letaknya berdekatan. MAN mampu menunjang data dan suara, bahkan dapat berhubungan dengan jaringan televisi kabel.
+            </p>
+            <p><strong>Contoh penerapan MAN:</strong></p>
+            <ul>
+                <li>🏛️ Jaringan yang menghubungkan beberapa kantor cabang dalam satu kota</li>
+                <li>🏢 Jaringan antar lembaga pemerintahan dalam satu wilayah administratif</li>
+            </ul>
+
+            <h4>3. Wide Area Network (WAN) - Jaringan Skala Luas</h4>
+            <p>
+                WAN mencakup daerah geografis yang sangat luas, seringkali mencakup negara bahkan benua. Jaringan internet yang kita gunakan sehari-hari adalah contoh utama dari WAN, yang memungkinkan kita terhubung dengan server di negara lain.
+            </p>
+
+            <!-- C. FOKUS PADA LAN -->
+            <h3>C. FOKUS PADA JARINGAN LOKAL (LAN)</h3>
+            <p>Karena LAN adalah jenis jaringan yang paling sering kita temui di lingkungan sekolah dan rumah, mari kita pahami lebih dalam.</p>
+
+            <h4>1. Mengapa LAN Penting di Sekolah?</h4>
+            <p>Penerapan LAN di sekolah memungkinkan pengguna jaringan (kepala sekolah, guru, siswa, dan pegawai administrasi) untuk:</p>
+            <ul>
+                <li>💬 <strong>Saling berkomunikasi</strong> dengan mudah</li>
+                <li>📁 <strong>Bertukar data</strong> dengan cepat</li>
+                <li>🖨️ <strong>Berbagi perangkat</strong> lainnya seperti printer</li>
+                <li>🌐 <strong>Menggunakan koneksi internet secara bersamaan</strong></li>
+            </ul>
+            <p>
+                Sebuah penelitian yang dilakukan di Sekolah Dasar Negeri 4 Sragen menunjukkan bahwa sebelum ada LAN, guru dan siswa kesulitan bertukar data karena harus berjalan bolak-balik membawa perangkat penyimpanan. Setelah LAN dibangun, komunikasi dan pertukaran data berjalan lebih maksimal dan efektif.
+            </p>
+
+            <h4>2. Manfaat LAN dalam Kehidupan Sehari-hari</h4>
+            <table class="manfaat-table">
+                <thead>
+                    <tr>
+                        <th>Tempat</th>
+                        <th>Manfaat LAN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🏫 Sekolah</strong></td>
+                        <td>Memudahkan transfer data antar guru dan siswa; berbagi printer; akses internet bersama; mendukung proses belajar mengajar</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏢 Kantor</strong></td>
+                        <td>Mempercepat proses distribusi data; meningkatkan kolaborasi antar unit kerja; menghindari data ganda (redundansi)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏠 Rumah</strong></td>
+                        <td>Menghubungkan laptop, ponsel, dan smart TV dalam satu jaringan; berbagi koneksi internet; mencetak dokumen dari berbagai perangkat</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- D. BAGAIMANA LAN BEKERJA -->
+            <h3>D. BAGAIMANA LAN BEKERJA?</h3>
+            <p>Untuk menghubungkan komputer-komputer dalam sebuah LAN, diperlukan beberapa komponen:</p>
+
+            <div class="komponen-box">
+                <ul style="margin-bottom:0;">
+                    <li><strong>🔌 Kabel atau Media Nirkabel</strong>: Sebagai saluran transmisi data. LAN biasanya menggunakan kabel UTP, tetapi LAN nirkabel (Wi-Fi) juga umum digunakan.</li>
+                    <li><strong>🔀 Switch atau Hub</strong>: Perangkat yang menghubungkan semua komputer dalam jaringan dan mengatur lalu lintas data.</li>
+                    <li><strong>💳 Kartu Jaringan (NIC)</strong>: Perangkat di setiap komputer yang memungkinkannya terhubung ke jaringan.</li>
+                    <li><strong>📡 Protokol Komunikasi</strong>: "Bahasa" yang digunakan komputer untuk berbicara satu sama lain. Ethernet (IEEE 802.3) adalah teknologi LAN yang paling umum digunakan.</li>
+                </ul>
+            </div>
+
+            <!-- E. RANGKUMAN -->
+            <h3>E. RANGKUMAN</h3>
+            <ul>
+                <li>🌐 <strong>Jaringan komputer</strong> adalah kumpulan dua atau lebih komputer yang terhubung untuk saling bertukar informasi dan berbagi sumber daya.</li>
+                <li>📊 Berdasarkan jangkauan geografis, jaringan dibagi menjadi <strong>LAN</strong> (lokal/gedung), <strong>MAN</strong> (kota/metropolitan), dan <strong>WAN</strong> (negara/benua).</li>
+                <li>📶 <strong>LAN (Local Area Network)</strong> adalah jaringan yang mencakup area kecil seperti satu gedung, sekolah, atau rumah. Ciri khasnya adalah kecepatan tinggi dan tingkat error yang rendah.</li>
+                <li>🏫 LAN sangat bermanfaat di sekolah untuk <strong>berbagi file</strong>, <strong>berbagi printer</strong>, <strong>akses internet bersama</strong>, serta <strong>memperlancar proses administrasi</strong> dan belajar mengajar.</li>
+                <li>⚡ Dengan adanya LAN, pekerjaan menjadi lebih efisien karena data dapat dipindahkan dengan cepat tanpa harus menggunakan perangkat penyimpanan fisik seperti flashdisk.</li>
+            </ul>
+
+            <!-- QUOTE -->
+            <div class="quote-box">
+                "Jaringan komputer adalah nadi dari era digital. Memahami cara kerjanya berarti kita memahami bagaimana dunia saling terhubung, mulai dari satu ruangan hingga ke seluruh penjuru dunia."
+            </div>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-jaringan-lokal.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

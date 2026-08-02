@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Toleransi & Empati Digital • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .tips-box {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .tips-box strong {
+            color: #1b5e20;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 6px solid #e65100;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .warning-box strong {
+            color: #bf360c;
+        }
+        .quote-box {
+            background: #f5f0e8;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #3d2e1e;
+            border: 1px solid #d4c5a9;
+        }
+        .quote-box strong {
+            font-style: normal;
+            color: #0b2b5c;
+        }
+        .tanyaan-box {
+            background: #e3f2fd;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-left: 4px solid #0d47a1;
+        }
+        .tanyaan-box strong {
+            color: #0d47a1;
+        }
+        .peran-box {
+            background: #e0f2f1;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-left: 4px solid #00695c;
+        }
+        .peran-box strong {
+            color: #00695c;
+        }
+        .hadis-box {
+            background: #f3e5f5;
+            border-left: 6px solid #6a1b9a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+            text-align: center;
+        }
+        .hadis-box .arab {
+            font-size: 1.2rem;
+            color: #4a148c;
+            font-weight: 600;
+        }
+        .hadis-box .arti {
+            font-style: italic;
+            color: #4a148c;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.7rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 5px 6px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .quote-box {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+            .hadis-box .arab {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">🤝 Toleransi &amp; Empati Digital</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="toleransi-digital.html">🤝 Toleransi &amp; Empati Digital</a>
+            </div>
+
+            <h2>🤝 Toleransi &amp; Empati di Dunia Digital</h2>
+
+            <!-- A. PENDAHULUAN -->
+            <h3>A. PENDAHULUAN</h3>
+            <p>
+                Pernahkah kamu menerima komentar negatif di media sosial? Atau melihat perdebatan panas di kolom komentar karena perbedaan pendapat? Di dunia digital, kita sering berinteraksi dengan orang yang berbeda latar belakang, agama, budaya, dan pandangan. Di sinilah <strong>toleransi</strong> dan <strong>empati digital</strong> menjadi sangat penting.
+            </p>
+            <p>
+                <strong>Toleransi digital</strong> adalah sikap menghargai perbedaan pendapat, keyakinan, dan latar belakang orang lain saat berinteraksi di dunia maya. <strong>Empati digital</strong> adalah kemampuan untuk merasakan dan memahami apa yang dirasakan orang lain di balik layar, serta bertindak dengan penuh kesadaran akan dampak dari setiap kata dan tindakan kita di internet.
+            </p>
+            <p>
+                Keduanya adalah fondasi untuk menciptakan ruang digital yang <strong>aman, etis, dan inklusif</strong>.
+            </p>
+
+            <!-- B. MENGAPA PENTING -->
+            <h3>B. MENGAPA TOLERANSI DAN EMPATI PENTING DI DUNIA DIGITAL?</h3>
+
+            <h4>1. Melawan Meningkatnya Perundungan Siber (Cyberbullying)</h4>
+            <p>
+                Berbagai laporan menunjukkan bahwa angka perundungan siber di Indonesia terus meningkat, mencerminkan lemahnya empati digital di kalangan pengguna media sosial. Di balik layar, tanpa melihat ekspresi wajah atau bahasa tubuh lawan bicara, remaja emosional sering tidak berfungsi dengan baik. Akibatnya, mereka lebih berani menghujat, mengejek, atau mengucilkan orang lain di dunia maya, padahal di dunia nyata mereka mungkin adalah orang yang santun.
+            </p>
+            <div class="warning-box">
+                <p style="margin-bottom:0;">
+                    <strong>⚠️ Fenomena "disinhibisi daring"</strong> membuat seseorang kehilangan kendali diri karena tidak melihat reaksi langsung dari korban. Mereka menganggap komentar jahat hanya "bercanda", padahal dampaknya sangat nyata bagi orang yang menerima.
+                </p>
+            </div>
+
+            <h4>2. Menangkal Intoleransi, Radikalisme, dan Terorisme</h4>
+            <p>
+                BNPT (Badan Nasional Penanggulangan Terorisme) secara tegas menyatakan bahwa empati digital adalah kunci untuk mencegah intoleransi dan radikalisme pada generasi muda. Ruang digital yang dipenuhi ujaran kebencian dan narasi provokatif dapat memecah belah persatuan bangsa. Oleh karena itu, generasi muda harus mampu <strong>memenuhi ruang digital dengan narasi perdamaian, toleransi, dan pesan positif</strong>.
+            </p>
+
+            <h4>3. Menjaga Kesehatan Mental dan Keharmonisan Sosial</h4>
+            <p>
+                Tanpa empati, dunia digital menjadi tempat yang dingin dan penuh konflik. Budaya instan di internet mendorong perilaku reaktif di mana kita cenderung memberikan penilaian atau ejekan tanpa memikirkan dampak emosional jangka panjang bagi korbannya. Hilangnya empati digital ini mengancam keharmonisan hubungan sosial, bahkan memicu perselisihan yang berawal dari grup WhatsApp hingga berujung pada perkelahian fisik di sekolah.
+            </p>
+
+            <!-- C. BAGAIMANA MENGAMALKAN -->
+            <h3>C. BAGAIMANA MENGAMALKAN TOLERANSI DAN EMPATI DI DUNIA DIGITAL?</h3>
+
+            <h4>1. Berpikir Sebelum Berkomentar (Think Before You Type)</h4>
+            <p>Setiap kali akan menulis komentar, tanyakan pada diri sendiri:</p>
+            <div class="tanyaan-box">
+                <ul style="margin-bottom:0;">
+                    <li>❓ Apakah kata-kata ini akan menyakiti perasaan orang lain?</li>
+                    <li>❓ Apakah saya mau menerima kata-kata ini jika ditujukan kepada saya?</li>
+                    <li>❓ Apakah ini kritik membangun atau justru hinaan yang merugikan?</li>
+                </ul>
+            </div>
+
+            <div class="hadis-box">
+                <p class="arab">مَنْ كَانَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ</p>
+                <p class="arti">"Barang siapa yang beriman kepada Allah dan hari akhir, maka hendaklah ia berkata baik atau diam."</p>
+                <p style="margin-top:6px; font-size:0.85rem; color:#6a1b9a;">(HR. Bukhari dan Muslim)</p>
+                <p style="margin-top:8px; margin-bottom:0; font-style:normal;">
+                    Prinsip ini sangat relevan di dunia digital. Menahan diri dari komentar yang menyakitkan bukanlah kelemahan, melainkan bentuk kekuatan karakter dan kedewasaan iman.
+                </p>
+            </div>
+
+            <h4>2. Hargai Perbedaan dan Sudut Pandang Lain</h4>
+            <p>
+                Di balik setiap akun media sosial, ada manusia dengan latar belakang, agama, budaya, dan pengalaman yang beragam. Memahami bahwa orang lain bisa saja memiliki sudut pandang berbeda membantu kita untuk tidak tergesa-gesa menilai atau menghakimi. Dalam bermain <em>game online</em> misalnya, interaksi lintas budaya dapat menjadi sarana belajar toleransi, mengelola emosi, berkompromi, dan menghargai keberagaman.
+            </p>
+
+            <h4>3. Pilih Kata-Kata yang Santun dan Positif</h4>
+            <p>
+                <strong>Etika digital</strong> mengajarkan kita untuk bersikap sopan dan bertanggung jawab saat berkomunikasi di internet. Komentar negatif atau unggahan sembarangan dapat menimbulkan dampak jangka panjang yang merusak reputasi diri dan menyakiti orang lain. Sebaliknya, kata-kata baik yang kita tulis di internet adalah "cahaya" bagi kelestarian nilai-nilai moral bangsa.
+            </p>
+
+            <h4>4. Jangan Sebarkan Informasi yang Belum Jelas Kebenarannya</h4>
+            <p>
+                <strong>"Saring sebelum sharing"</strong> bukan sekadar slogan. Menyebarkan hoaks adalah bentuk ketidakpedulian terhadap orang lain karena dapat menimbulkan kepanikan dan kesalahpahaman di masyarakat. Etika digital mengajarkan tanggung jawab untuk memeriksa kebenaran informasi sebelum membagikannya. Ini adalah bentuk empati kepada masyarakat luas agar tidak terbebani oleh informasi palsu yang meresahkan.
+            </p>
+
+            <h4>5. Pahami Bahwa Jejak Digital Bersifat Permanen</h4>
+            <p>
+                Setiap komentar, unggahan, dan interaksi kita di internet meninggalkan jejak yang bersifat permanen dan dapat memengaruhi reputasi diri di masa depan. Kesadaran akan "jejak digital" ini mendorong kita untuk lebih berhati-hati dalam bersikap dan memilih kata-kata.
+            </p>
+
+            <h4>6. Bangun "Kesadaran Diri Digital"</h4>
+            <p>
+                <strong>Kewargaan digital</strong> mengajarkan kita untuk memiliki kesadaran diri digital, yaitu kemampuan memposisikan diri di posisi orang lain sebelum bertindak di internet. Dengan memahami bahwa setiap kata yang kita ketik memiliki beban emosional bagi orang lain, kita akan belajar untuk lebih berhati-hati dalam bersikap.
+            </p>
+
+            <!-- D. PERAN KITA -->
+            <h3>D. PERAN KITA SEBAGAI GENERASI DIGITAL</h3>
+            <p>Kita semua memiliki tanggung jawab untuk menciptakan ruang digital yang sehat. Berikut hal-hal yang bisa kita lakukan:</p>
+
+            <div class="peran-box">
+                <ul style="margin-bottom:0;">
+                    <li><strong>🌟 Menjadi teladan</strong> dalam berperilaku sopan dan penuh empati di media sosial.</li>
+                    <li><strong>📢 Menyebarkan konten positif</strong> yang bermanfaat dan menginspirasi, bukan konten provokatif atau kebencian.</li>
+                    <li><strong>🤝 Mendukung korban perundungan siber</strong>, bukan menjadi penonton diam yang membiarkan keburukan terjadi.</li>
+                    <li><strong>📚 Menggunakan teknologi sebagai alat edukasi</strong> untuk menyebarkan nilai-nilai toleransi dan perdamaian.</li>
+                    <li><strong>🚫 Melaporkan konten negatif</strong> (ujaran kebencian, perundungan, hoaks) ke platform media sosial atau pihak berwenang.</li>
+                </ul>
+            </div>
+
+            <div class="quote-box" style="background:#f5f0e8; border-color:#d4c5a9;">
+                <p style="margin-bottom:0; font-style:italic;">
+                    "Jari-jari kita ini menentukan isi ruang digital." Oleh karena itu, mari kita gunakan jari kita untuk mengetik kebaikan, bukan kebencian.
+                </p>
+                <p style="margin-top:6px; font-size:0.85rem; font-style:normal; color:#5d4e3a;">
+                    — Prof. Dr. Hj. Husniyatus Salamah Zainiyati, M.Ag.
+                </p>
+            </div>
+
+            <!-- E. RANGKUMAN -->
+            <h3>E. RANGKUMAN</h3>
+            <ul>
+                <li>🤝 <strong>Toleransi digital</strong> adalah sikap menghargai perbedaan pendapat, keyakinan, dan latar belakang orang lain di dunia maya. <strong>Empati digital</strong> adalah kemampuan merasakan dan memahami perasaan orang lain di balik layar serta bertindak dengan penuh kesadaran akan dampak tindakan kita.</li>
+                <li>💡 Empati digital berperan penting dalam <strong>menekan perilaku perundungan siber</strong>, <strong>meningkatkan sikap toleran</strong>, dan <strong>memperkuat etika bermedia</strong>. Literasi digital berbasis empati terbukti mampu menumbuhkan tanggung jawab sosial dan mengurangi penyebaran disinformasi.</li>
+                <li>⚠️ Tanpa empati, ruang digital menjadi tempat yang dingin dan penuh konflik. Fenomena <strong>"disinhibisi daring"</strong> membuat orang lebih berani berkata kasar karena tidak melihat reaksi langsung lawan bicara.</li>
+                <li>📝 Cara mengamalkan toleransi dan empati digital: <strong>berpikir sebelum berkomentar</strong>, <strong>menghargai perbedaan</strong>, <strong>memilih kata-kata santun</strong>, <strong>menyaring informasi sebelum menyebar</strong>, dan memiliki <strong>kesadaran akan jejak digital</strong> yang permanen.</li>
+                <li>🌍 Sebagai generasi digital, kita bertanggung jawab untuk <strong>memenuhi ruang digital dengan narasi perdamaian</strong>, <strong>menyebarkan konten positif</strong>, dan menjadi <strong>teladan dalam beretika</strong> di dunia maya.</li>
+            </ul>
+
+            <!-- QUOTE PENUTUP -->
+            <div class="quote-box" style="background:#e8f0fe; border-color:#b0c7e0;">
+                <p style="margin-bottom:0; font-style:italic;">
+                    "Ruang digital adalah cerminan akhlak penggunanya. Jika diisi dengan etika, empati, dan tanggung jawab moral, ia dapat menjadi sarana menyebarkan ilmu, memperkuat persaudaraan, dan membangun peradaban yang lebih baik."
+                </p>
+            </div>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-toleransi-digital.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

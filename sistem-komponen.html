@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Sistem Komputer • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        /* tambahan gaya khusus untuk halaman materi */
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .analogi-box {
+            background: #fef9e7;
+            border: 1px solid #f5d78a;
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin: 18px 0;
+        }
+        .materi-content .analogi-box h4 {
+            color: #8a6d1b;
+            margin-top: 0;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.75rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 6px 8px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">🧠 Sistem Komputer</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <!-- overlay sub menu -->
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="sistem-komponen.html">💻 Sistem Komputer</a>
+            </div>
+
+            <h2>💻 Sistem Komputer &amp; Komponennya</h2>
+
+            <!-- Tujuan Pembelajaran -->
+            <div class="highlight-box">
+                <h3 style="margin-top:0; color:#0b2b5c;">🎯 Tujuan Pembelajaran</h3>
+                <p style="margin-bottom:4px;">Setelah mempelajari materi ini, siswa mampu:</p>
+                <ul>
+                    <li>Menjelaskan pengertian sistem komputer.</li>
+                    <li>Mengidentifikasi dan mendeskripsikan komponen-komponen utama komputer (hardware, software, brainware).</li>
+                    <li>Menjelaskan fungsi masing-masing komponen komputer.</li>
+                    <li>Menggambarkan cara kerja komputer secara sederhana (proses input – proses – output).</li>
+                </ul>
+            </div>
+
+            <!-- A. APA ITU SISTEM KOMPUTER -->
+            <h3>A. APA ITU SISTEM KOMPUTER?</h3>
+            <p>
+                <strong>Sistem komputer</strong> adalah kumpulan dari perangkat keras (hardware), perangkat lunak (software), dan pengguna (brainware) yang saling terhubung dan bekerja sama untuk mengolah data menjadi informasi yang berguna.
+            </p>
+            <div class="analogi-box">
+                <h4>🍽️ Analogi: Restoran</h4>
+                <ul>
+                    <li><strong>Hardware</strong> (perangkat keras) = peralatan dapur (kompor, wajan, pisau).</li>
+                    <li><strong>Software</strong> (perangkat lunak) = resep masakan.</li>
+                    <li><strong>Brainware</strong> (pengguna) = koki yang memasak.</li>
+                </ul>
+                <p style="margin-top:8px;">Tanpa salah satu dari ketiganya, restoran tidak bisa menghasilkan masakan yang enak. Begitu pula komputer tidak akan berguna tanpa salah satu komponen tersebut.</p>
+            </div>
+
+            <!-- B. KOMPONEN SISTEM KOMPUTER -->
+            <h3>B. KOMPONEN SISTEM KOMPUTER</h3>
+            <p>Sistem komputer terdiri dari 3 elemen utama:</p>
+
+            <h4>1. Hardware (Perangkat Keras)</h4>
+            <p>Adalah semua bagian fisik dari komputer yang bisa kita lihat, raba, dan sentuh.</p>
+            <p>Berdasarkan fungsinya, hardware dibagi menjadi 4 kelompok:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kelompok</th>
+                        <th>Fungsi</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>a. Perangkat Input</strong></td>
+                        <td>Alat untuk memasukkan data ke dalam komputer.</td>
+                        <td>⌨️ Keyboard, 🖱️ Mouse, 🎤 Mikrofon, 📷 Webcam, Scanner, Touchscreen.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>b. Perangkat Proses</strong></td>
+                        <td>Otak komputer yang mengolah data.</td>
+                        <td>🧠 Processor (CPU) – tempat semua perhitungan dan logika terjadi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>c. Perangkat Output</strong></td>
+                        <td>Alat untuk menampilkan hasil olahan data.</td>
+                        <td>🖥️ Monitor, 🖨️ Printer, 🔊 Speaker, 📽️ Proyektor.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>d. Perangkat Penyimpanan</strong></td>
+                        <td>Alat untuk menyimpan data dan program.</td>
+                        <td>💾 Hard Disk (HDD), SSD, RAM (penyimpanan sementara), Flashdisk, CD/DVD.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight-box" style="background:#e8f0fe;">
+                <p style="margin-bottom:0;"><strong>💡 Perhatikan:</strong> RAM (Random Access Memory) itu unik. Ia menyimpan data <em>sementara</em> selama komputer menyala. Jika mati, data di RAM hilang. Sedangkan HDD/SSD menyimpan data secara <em>permanen</em> meskipun komputer mati.</p>
+            </div>
+
+            <h4>2. Software (Perangkat Lunak)</h4>
+            <p>Adalah kumpulan instruksi atau program yang mengatur hardware agar bisa melakukan tugas tertentu. Software tidak bisa dipegang, tapi bisa diinstal dan dijalankan.</p>
+            <p>Software dibagi menjadi 3 jenis:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis</th>
+                        <th>Fungsi</th>
+                        <th>Contoh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>a. Sistem Operasi (OS)</strong></td>
+                        <td>Menghubungkan user dengan hardware. Mengelola semua sumber daya komputer.</td>
+                        <td>🪟 Windows, 🍎 macOS, 🐧 Linux, 📱 Android, 📱 iOS.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>b. Program Aplikasi</strong></td>
+                        <td>Program yang digunakan untuk menyelesaikan tugas spesifik pengguna.</td>
+                        <td>📝 Microsoft Word, 🌐 Chrome, 🎨 Photoshop, 🎮 Game.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>c. Bahasa Pemrograman</strong></td>
+                        <td>Digunakan untuk membuat program/aplikasi.</td>
+                        <td>🐍 Python, ☕ Java, C++, 🧩 Scratch.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>3. Brainware (Pengguna/Manusia)</h4>
+            <p>Adalah orang yang mengoperasikan dan memanfaatkan komputer. Tanpa brainware, komputer hanyalah benda mati.</p>
+            <p>Brainware dibagi berdasarkan perannya:</p>
+            <ul>
+                <li><strong>👨‍💻 Programmer:</strong> Orang yang membuat software.</li>
+                <li><strong>🛠️ Administrator:</strong> Orang yang mengelola jaringan dan sistem.</li>
+                <li><strong>👤 Operator/User:</strong> Orang yang menggunakan komputer untuk bekerja atau belajar (kalian termasuk ini!).</li>
+                <li><strong>📊 Analis:</strong> Orang yang merancang sistem untuk perusahaan.</li>
+            </ul>
+
+            <!-- C. FUNGSI UTAMA KOMPUTER -->
+            <h3>C. FUNGSI UTAMA KOMPUTER</h3>
+            <p>Secara garis besar, komputer memiliki 4 fungsi utama:</p>
+            <ol>
+                <li><strong>📥 Menerima Input (Data)</strong> → dari pengguna melalui perangkat input.</li>
+                <li><strong>⚙️ Memproses Data</strong> → mengubah, menghitung, membandingkan data di dalam CPU.</li>
+                <li><strong>📤 Menghasilkan Output (Informasi)</strong> → menampilkan hasil ke perangkat output.</li>
+                <li><strong>💾 Menyimpan Data &amp; Informasi</strong> → menyimpan untuk digunakan di masa depan.</li>
+            </ol>
+
+            <!-- D. CARA KERJA KOMPUTER -->
+            <h3>D. CARA KERJA KOMPUTER (Siklus Pemrosesan Data)</h3>
+            <p>Cara kerja komputer mengikuti alur yang sangat sederhana, yaitu <strong>Siklus Input – Proses – Output – Storage</strong>. Mari kita lihat langkah demi langkah:</p>
+
+            <div class="highlight-box" style="background:#eaf4ea; border-left-color:#2d7a2d;">
+                <h4 style="color:#1a5a1a; margin-top:0;">📥 1. INPUT</h4>
+                <p style="margin-bottom:0;">Pengguna mengetik huruf "A" di keyboard.<br>→ Data ini berupa sinyal listrik dikirim ke CPU.</p>
+            </div>
+            <div class="highlight-box" style="background:#e8f0fe; border-left-color:#1a4a7a;">
+                <h4 style="color:#0b2b5c; margin-top:0;">⚙️ 2. PROSES (DI DALAM CPU)</h4>
+                <p>Di dalam CPU ada 3 bagian penting:</p>
+                <ul>
+                    <li><strong>🔢 ALU (Arithmetic Logic Unit):</strong> Bertugas menghitung (+, -, ×, ÷) dan membandingkan (lebih besar, sama dengan).</li>
+                    <li><strong>🎛️ CU (Control Unit):</strong> Bertugas mengatur lalu lintas data, mengartikan instruksi dari software, dan memberi perintah ke komponen lain.</li>
+                    <li><strong>📋 Register:</strong> Tempat penyimpanan data kecil dan super cepat di dalam CPU.</li>
+                </ul>
+                <p><strong>Prosesnya:</strong></p>
+                <ol>
+                    <li>CU membaca instruksi dari program (misal: "tampilkan huruf A di layar").</li>
+                    <li>Data "A" dikirim ke ALU (jika perlu diolah) atau langsung ke CU.</li>
+                    <li>CU kemudian mengirimkan perintah ke kartu grafis (VGA) untuk menampilkan huruf A.</li>
+                </ol>
+            </div>
+            <div class="highlight-box" style="background:#fef3e0; border-left-color:#b8730e;">
+                <h4 style="color:#8a5d0b; margin-top:0;">📤 3. OUTPUT</h4>
+                <p style="margin-bottom:0;">Kartu grafis mengirimkan sinyal ke monitor.<br>→ Monitor menampilkan huruf "A" di layar. Kita bisa melihatnya.</p>
+            </div>
+            <div class="highlight-box" style="background:#f0e6f6; border-left-color:#7a3a8a;">
+                <h4 style="color:#4a1a5a; margin-top:0;">💾 4. STORAGE (Penyimpanan)</h4>
+                <p style="margin-bottom:0;">Jika kita menekan tombol <strong>Save</strong>, maka data huruf "A" tadi akan dipindahkan dari RAM (sementara) ke Hard Disk (permanen) agar tidak hilang saat komputer dimatikan.</p>
+            </div>
+
+            <div style="background:#eef2f7; border-radius:16px; padding:16px 20px; margin:18px 0;">
+                <p style="margin-bottom:0;"><strong>📊 Ilustrasi Alur (Bacalah dari kiri ke kanan):</strong></p>
+                <p style="margin:6px 0 0; font-size:1.05rem;">
+                    <strong>📥 INPUT</strong> (Keyboard/Mouse) → <strong>⚙️ PROSES</strong> (CPU: ALU + CU) → <strong>📤 OUTPUT</strong> (Monitor/Printer)
+                </p>
+                <p style="margin:2px 0 0;">↕ (Selalu ada RAM sebagai tempat sementara)</p>
+                <p style="margin:0;"><strong>💾 STORAGE</strong> (Hard Disk/SSD untuk penyimpanan permanen)</p>
+            </div>
+
+            <!-- E. ANALOGI SEDERHANA -->
+            <h3>E. ANALOGI SEDERHANA (UNTUK DIINGAT)</h3>
+            <p>Bayangkan kamu sedang mengerjakan PR di meja belajar:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bagian Komputer</th>
+                        <th>Analogi di Meja Belajar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🧠 CPU (Prosesor)</strong></td>
+                        <td>Otak kamu yang berpikir dan menghitung.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📋 RAM</strong></td>
+                        <td>Meja belajar (tempat buku dan alat tulis diletakkan sementara saat mengerjakan PR). Jika PR selesai, meja dibersihkan (RAM kosong).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💾 Hard Disk (HDD/SSD)</strong></td>
+                        <td>Rak buku di kamar (tempat menyimpan buku secara permanen, meskipun kamu tidur).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>⌨️ Keyboard/Mouse (Input)</strong></td>
+                        <td>Tangan dan mata kamu yang membaca soal dan menulis jawaban.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🖥️ Monitor (Output)</strong></td>
+                        <td>Buku tulis tempat kamu menuliskan hasil jawaban agar bisa dilihat.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- F. RANGKUMAN -->
+            <h3>F. RANGKUMAN</h3>
+            <ul>
+                <li><strong>💻 Sistem Komputer</strong> = Hardware + Software + Brainware.</li>
+                <li><strong>🖥️ Hardware</strong> adalah benda fisik (input, proses, output, storage).</li>
+                <li><strong>📦 Software</strong> adalah program (Sistem Operasi, Aplikasi, Bahasa Pemrograman).</li>
+                <li><strong>👤 Brainware</strong> adalah manusia penggunanya.</li>
+                <li>Cara kerja selalu mengikuti siklus: <strong>📥 Input → ⚙️ Proses → 📤 Output → 💾 Storage</strong>.</li>
+            </ul>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-sistem-komponen.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

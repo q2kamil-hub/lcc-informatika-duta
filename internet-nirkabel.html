@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Internet Nirkabel • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .tips-box {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .tips-box strong {
+            color: #1b5e20;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 6px solid #e65100;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .warning-box strong {
+            color: #bf360c;
+        }
+        .kelebihan-table th {
+            background: #0b2b5c !important;
+        }
+        .kelebihan-table td:first-child {
+            font-weight: 600;
+            color: #0b2b5c;
+        }
+        .perbandingan-table th {
+            background: #0b2b5c !important;
+        }
+        .perbandingan-table td:first-child {
+            font-weight: 600;
+            color: #0b2b5c;
+        }
+        .quote-box {
+            background: #f5f0e8;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #3d2e1e;
+            border: 1px solid #d4c5a9;
+        }
+        .quote-box strong {
+            font-style: normal;
+            color: #0b2b5c;
+        }
+        .isp-table th {
+            background: #0b2b5c !important;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.7rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 5px 6px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .quote-box {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">📡 Internet Nirkabel</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="internet-nirkabel.html">📡 Internet Nirkabel</a>
+            </div>
+
+            <h2>📡 Jaringan Kabel &amp; Nirkabel</h2>
+
+            <!-- A. PENDAHULUAN -->
+            <h3>A. PENDAHULUAN</h3>
+            <p>
+                Pernahkah kamu bertanya-tanya, bagaimana caranya video yang kamu tonton di ponsel bisa sampai ke layar gadgetmu? Atau mengapa jaringan WiFi di rumah kadang lambat, padahal koneksi kabel di komputer terasa lebih cepat? Jawabannya ada pada dua jenis konektivitas internet yang utama: <strong>jaringan kabel</strong> dan <strong>jaringan nirkabel</strong>.
+            </p>
+            <p>
+                Keduanya adalah "jalan" yang menghubungkan perangkat kita ke internet, tetapi cara kerjanya sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih koneksi yang tepat sesuai kebutuhan.
+            </p>
+
+            <!-- B. JARINGAN KABEL -->
+            <h3>B. JARINGAN KABEL (WIRED NETWORK)</h3>
+
+            <h4>1. Apa Itu Jaringan Kabel?</h4>
+            <p>
+                Jaringan kabel adalah jenis jaringan yang menggunakan <strong>kabel fisik</strong> sebagai media untuk menghantarkan data dari satu perangkat ke perangkat lain. Kabel ini menjadi "jalan tol" bagi data untuk berpindah dari komputer, router, atau perangkat lainnya.
+            </p>
+
+            <h4>Media yang Digunakan:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis Kabel</th>
+                        <th>Karakteristik</th>
+                        <th>Penggunaan Umum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kabel Tembaga (Copper)</strong></td>
+                        <td>Menghantarkan data melalui sinyal listrik. Contoh: kabel UTP (Ethernet). Biaya lebih murah, tetapi lebih rentan terhadap interferensi.</td>
+                        <td>Jaringan LAN di rumah, kantor, dan sekolah.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kabel Serat Optik (Fiber Optic)</strong></td>
+                        <td>Menghantarkan data melalui cahaya. Kecepatan sangat tinggi (hingga 1 Gbps atau lebih), stabil, dan tahan gangguan.</td>
+                        <td>Jaringan internet berkecepatan tinggi, MAN, dan WAN.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <strong>Kabel Ethernet</strong> yang sering kita lihat (dengan konektor seperti kabel telepon besar/RJ-45) memiliki beberapa standar kecepatan. Kabel <strong>Cat 5e</strong> mendukung kecepatan hingga 1 Gbps, sedangkan <strong>Cat 6</strong> juga mendukung 1 Gbps dengan performa yang lebih baik, dan <strong>Cat 6a</strong> dapat mencapai 10 Gbps.
+            </p>
+
+            <h4>2. Kelebihan dan Kekurangan Jaringan Kabel</h4>
+            <table class="kelebihan-table">
+                <thead>
+                    <tr>
+                        <th>Kelebihan</th>
+                        <th>Kekurangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Stabil dan Cepat:</strong> Koneksi tidak terpengaruh oleh dinding tebal atau sinyal dari perangkat lain. Sangat cocok untuk main game online dan streaming video.</td>
+                        <td><strong>Kurang Fleksibel:</strong> Perangkat harus berada di dekat kabel dan tidak bisa dipindahkan dengan mudah.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Keamanan Lebih Tinggi:</strong> Karena akses fisik terbatas, lebih sulit bagi pihak yang tidak berwenang untuk "menyadap" data.</td>
+                        <td><strong>Instalasi Ribet:</strong> Memasang kabel di rumah atau gedung seringkali rumit, berantakan, dan memakan biaya.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Latensi Rendah (Ping Kecil):</strong> Waktu tempuh data sangat singkat, membuat permainan online terasa lebih responsif.</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- C. JARINGAN NIRKABEL -->
+            <h3>C. JARINGAN NIRKABEL (WIRELESS NETWORK)</h3>
+
+            <h4>1. Apa Itu Jaringan Nirkabel?</h4>
+            <p>
+                Jaringan nirkabel atau <em>wireless</em> adalah jaringan yang menggunakan <strong>gelombang radio</strong> atau <strong>cahaya</strong> (seperti inframerah) sebagai media penghantar, sehingga perangkat dapat terhubung tanpa kabel fisik. Contoh paling umum adalah <strong>WiFi</strong>.
+            </p>
+
+            <h4>2. Jenis-Jenis Teknologi Nirkabel</h4>
+            <p>Berdasarkan jangkauannya, teknologi nirkabel dibagi menjadi beberapa kategori:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jenis</th>
+                        <th>Jangkauan</th>
+                        <th>Kecepatan</th>
+                        <th>Standar</th>
+                        <th>Contoh Penggunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>WPAN</strong> (Wireless Personal Area Network)</td>
+                        <td>Sangat dekat (10-16 m)</td>
+                        <td>Hingga 2 Mbps</td>
+                        <td>Bluetooth, IEEE 802.15</td>
+                        <td>Menghubungkan headset, mouse, atau printer ke ponsel/laptop.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WLAN</strong> (Wireless Local Area Network)</td>
+                        <td>Satu gedung</td>
+                        <td>Hingga 54 Mbps</td>
+                        <td><strong>WiFi</strong> (IEEE 802.11)</td>
+                        <td>Internet di rumah, sekolah, dan kafe (hotspot).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WMAN</strong> (Wireless Metropolitan Area Network)</td>
+                        <td>Satu kota</td>
+                        <td>Kuat</td>
+                        <td>WiMAX (IEEE 802.16)</td>
+                        <td>Koneksi antar gedung dalam satu kota.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WWAN</strong> (Wireless Wide Area Network)</td>
+                        <td>Sangat luas (antar negara)</td>
+                        <td>Rendah (hingga 170 Kbps)</td>
+                        <td>Jaringan seluler (2G, 3G, 4G, 5G)</td>
+                        <td>Internet di ponsel saat bepergian.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box" style="background:#e3f2fd; border-left-color:#0d47a1;">
+                <p style="margin-bottom:0;"><strong>📡 Fokus pada WiFi:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li><strong>Standar:</strong> WiFi bekerja berdasarkan standar IEEE 802.11. Versi terbaru seperti <strong>WiFi 6</strong> menawarkan kecepatan yang sangat tinggi, mendekati kecepatan kabel.</li>
+                    <li><strong>Fleksibilitas:</strong> Keunggulan utama WiFi adalah <strong>fleksibilitas</strong>. Kita bisa membawa laptop atau ponsel ke mana saja selama masih dalam jangkauan sinyal.</li>
+                </ul>
+            </div>
+
+            <h4>3. Kelebihan dan Kekurangan Jaringan Nirkabel</h4>
+            <table class="kelebihan-table">
+                <thead>
+                    <tr>
+                        <th>Kelebihan</th>
+                        <th>Kekurangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Praktis dan Fleksibel:</strong> Tidak perlu repot dengan kabel. Perangkat bisa bergerak bebas dalam jangkauan sinyal.</td>
+                        <td><strong>Mudah Terganggu:</strong> Sinyal bisa terhalang tembok tebal, peralatan elektronik lain, atau terganggu cuaca (untuk jaringan satelit).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instalasi Mudah:</strong> Cukup pasang router, semua perangkat bisa langsung terhubung tanpa kabel.</td>
+                        <td><strong>Keamanan Lebih Rawan:</strong> Sinyal bisa "disadap" oleh orang lain jika tidak dilindungi kata sandi yang kuat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biaya Lebih Murah:</strong> Menghemat biaya pembelian dan pemasangan kabel.</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- D. PERBANDINGAN -->
+            <h3>D. PERBANDINGAN: KABEL vs NIRKABEL</h3>
+            <p>Untuk memudahkanmu memilih, berikut perbandingan singkatnya:</p>
+
+            <table class="perbandingan-table">
+                <thead>
+                    <tr>
+                        <th>Aspek</th>
+                        <th>Jaringan Kabel</th>
+                        <th>Jaringan Nirkabel (WiFi)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Media</strong></td>
+                        <td>Kabel fisik (tembaga/serat optik)</td>
+                        <td>Gelombang radio</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kecepatan &amp; Stabilitas</strong></td>
+                        <td>Sangat stabil dan cepat</td>
+                        <td>Kecepatan bisa berfluktuasi, tergantung sinyal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mobilitas</strong></td>
+                        <td>Terbatas (perangkat tidak bisa dipindah)</td>
+                        <td>Sangat tinggi (bisa ke mana saja)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instalasi</strong></td>
+                        <td>Rumit dan berantakan</td>
+                        <td>Mudah dan rapi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Keamanan</strong></td>
+                        <td>Lebih aman</td>
+                        <td>Lebih berisiko jika tidak dijaga</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tips-box">
+                <p style="margin-bottom:0;"><strong>💡 Kesimpulan:</strong></p>
+                <ul style="margin-bottom:0;">
+                    <li>Pilih <strong>jaringan kabel</strong> untuk perangkat yang membutuhkan koneksi paling stabil dan cepat, seperti komputer untuk <em>gaming</em> atau <em>streaming</em>.</li>
+                    <li>Pilih <strong>jaringan nirkabel</strong> untuk perangkat yang ingin kamu gunakan dengan fleksibel, seperti ponsel dan laptop.</li>
+                </ul>
+            </div>
+
+            <!-- E. ISP -->
+            <h3>E. APA ITU ISP DAN JENIS LAYANAN INTERNET?</h3>
+            <p>
+                Untuk bisa terhubung ke internet, kita memerlukan <strong>ISP</strong> (Internet Service Provider) atau penyedia jasa internet. ISP menyediakan berbagai jenis layanan koneksi, yang pada dasarnya terbagi dalam dua kategori utama sesuai dengan media yang digunakan:
+            </p>
+
+            <h4>1. Layanan Berbasis Kabel</h4>
+            <table class="isp-table">
+                <thead>
+                    <tr>
+                        <th>Layanan</th>
+                        <th>Media</th>
+                        <th>Kecepatan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>DSL (Digital Subscriber Line)</strong></td>
+                        <td>Menggunakan saluran telepon tembaga. Lebih cepat dari dial-up.</td>
+                        <td>200 Kbps – 8 Mbps</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kabel (TV Kabel)</strong></td>
+                        <td>Menggunakan infrastruktur TV kabel (koaksial dan fiber optik).</td>
+                        <td>Bisa lebih dari 8 Mbps</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fiber Optic (Serat Optik)</strong></td>
+                        <td>Menggunakan kabel serat optik murni. Ini adalah teknologi <strong>tercepat dan paling stabil</strong>.</td>
+                        <td>Hingga 1 Gbps atau lebih</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>2. Layanan Nirkabel</h4>
+            <table class="isp-table">
+                <thead>
+                    <tr>
+                        <th>Layanan</th>
+                        <th>Media</th>
+                        <th>Kecepatan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Seluler (Mobile)</strong></td>
+                        <td>Jaringan 4G/5G melalui sinyal dari menara BTS.</td>
+                        <td>Semakin tinggi G (generasi), semakin cepat.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Satelit</strong></td>
+                        <td>Menggunakan sinyal dari satelit di luar angkasa. Cocok untuk daerah terpencil, tapi dipengaruhi cuaca.</td>
+                        <td>Relatif lebih lambat dari kabel.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fixed Wireless</strong></td>
+                        <td>Menggunakan gelombang radio untuk menghubungkan dua titik tetap.</td>
+                        <td>Bervariasi.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- F. RANGKUMAN -->
+            <h3>F. RANGKUMAN</h3>
+            <ul>
+                <li>🔌 <strong>Jaringan kabel</strong> menggunakan media fisik seperti kabel tembaga atau <strong>serat optik</strong>. Keunggulannya adalah <strong>stabil, cepat, dan aman</strong>. Kelemahannya adalah kurang fleksibel dan instalasi rumit.</li>
+                <li>📡 <strong>Jaringan nirkabel</strong> menggunakan <strong>gelombang radio</strong> (contoh: <strong>WiFi</strong>). Keunggulannya adalah <strong>praktis, fleksibel, dan mudah dipasang</strong>. Kelemahannya adalah rentan gangguan sinyal dan keamanan.</li>
+                <li>📊 <strong>Perbedaan utama</strong> ada pada media penghantar dan tingkat mobilitas. Kabel untuk performa, nirkabel untuk kemudahan.</li>
+                <li>🌐 Kedua jaringan membutuhkan <strong>ISP</strong> untuk terhubung ke internet global. Layanan ISP bisa berbasis kabel (DSL, kabel, fiber) atau nirkabel (seluler, satelit).</li>
+                <li>🔀 Saat ini, banyak tempat menggunakan <strong>jaringan hybrid</strong> (kombinasi kabel dan WiFi) untuk mendapatkan keuntungan dari keduanya: kabel untuk perangkat tetap, WiFi untuk perangkat mobile.</li>
+            </ul>
+
+            <!-- QUOTE -->
+            <div class="quote-box">
+                "Memahami dua 'jalan' menuju internet akan membantumu memilih koneksi terbaik: kabel untuk kecepatan, nirkabel untuk kebebasan."
+            </div>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-internet-nirkabel.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Mesin Pencari • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        /* tambahan gaya khusus untuk halaman materi */
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .tips-box {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .tips-box strong {
+            color: #1b5e20;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 6px solid #e65100;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .warning-box strong {
+            color: #bf360c;
+        }
+        .operator-table th {
+            background: #0b2b5c !important;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.75rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 6px 8px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">🔍 Mesin Pencari</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <!-- overlay sub menu -->
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="mesin-pencari.html">🔍 Mesin Pencari</a>
+            </div>
+
+            <h2>🔍 Mesin Pencari &amp; Literasi Informasi</h2>
+
+            <!-- A. APA ITU MESIN PENCARI -->
+            <h3>A. APA ITU MESIN PENCARI (SEARCH ENGINE)?</h3>
+            <p>
+                <strong>Mesin pencari</strong> adalah program perangkat lunak yang membantu kita menemukan informasi di internet dengan menggunakan <strong>kata kunci</strong> atau <strong>keyword</strong>. Mesin pencari bertugas mendaftar, mendata, dan mengindeks situs-situs yang ada di internet, kemudian menyajikan hasil yang paling sesuai dengan apa yang kita cari.
+            </p>
+            <p>Beberapa contoh mesin pencari yang populer antara lain:</p>
+            <ul>
+                <li><strong>🔵 Google</strong> (paling populer di dunia)</li>
+                <li><strong>🔴 Bing</strong> (dari Microsoft)</li>
+                <li><strong>🟣 Yahoo!</strong></li>
+                <li><strong>🟢 DuckDuckGo</strong> (fokus pada privasi pengguna)</li>
+            </ul>
+
+            <!-- B. BAGAIMANA MESIN PENCARI BEKERJA -->
+            <h3>B. BAGAIMANA MESIN PENCARI BEKERJA?</h3>
+            <p>
+                Cara kerja mesin pencari dapat diibaratkan seperti perpustakaan raksasa yang terus diperbarui setiap saat. Prosesnya terdiri dari <strong>tiga tahap utama</strong>:
+            </p>
+
+            <div class="highlight-box" style="background:#e3f2fd; border-left-color:#0d47a1;">
+                <h4 style="color:#0d47a1; margin-top:0;">1. Crawling (Penjelajahan)</h4>
+                <p style="margin-bottom:0;">
+                    Bayangkan ada ribuan "robot kecil" (disebut <strong>crawler</strong> atau <strong>spider</strong>) yang menjelajahi internet 24 jam sehari. Robot-robot ini mengunjungi halaman-halaman web, membaca isinya, dan mengikuti tautan (link) dari satu halaman ke halaman lainnya untuk menemukan halaman-halaman baru. Google menggunakan program bernama <strong>Googlebot</strong> untuk melakukan tugas ini.
+                </p>
+            </div>
+
+            <div class="highlight-box" style="background:#e8f5e9; border-left-color:#2e7d32;">
+                <h4 style="color:#1b5e20; margin-top:0;">2. Indexing (Pengindeksan)</h4>
+                <p style="margin-bottom:0;">
+                    Setelah halaman ditemukan, mesin pencari akan menganalisis dan menyimpan informasi dari halaman tersebut ke dalam database raksasa yang disebut <strong>indeks</strong>. Proses ini mirip seperti membuat katalog buku di perpustakaan. Mesin pencari mencatat kata-kata penting, judul, gambar, dan video dari setiap halaman, lalu menyimpannya agar mudah ditemukan saat ada yang mencarinya.
+                </p>
+            </div>
+
+            <div class="highlight-box" style="background:#fff3e0; border-left-color:#e65100;">
+                <h4 style="color:#bf360c; margin-top:0;">3. Serving Search Results (Menyajikan Hasil Pencarian)</h4>
+                <p style="margin-bottom:0;">
+                    Ketika kita mengetikkan kata kunci, mesin pencari akan mencari di dalam indeksnya untuk menemukan halaman yang paling relevan dengan pertanyaan kita. Mesin pencari menggunakan ratusan faktor untuk menentukan halaman mana yang paling baik, termasuk lokasi pengguna, bahasa, dan perangkat yang digunakan.
+                </p>
+            </div>
+
+            <!-- C. CARA MENGGUNAKAN MESIN PENCARI DENGAN EFEKTIF -->
+            <h3>C. CARA MENGGUNAKAN MESIN PENCARI DENGAN EFEKTIF</h3>
+
+            <h4>1. Gunakan Kata Kunci yang Spesifik</h4>
+            <p>
+                Semakin spesifik kata kunci yang kita gunakan, semakin tepat hasil yang akan kita dapatkan. Misalnya, daripada mengetik "hewan", lebih baik ketik <strong>"hewan khas Indonesia yang terancam punah"</strong>.
+            </p>
+
+            <h4>2. Manfaatkan Operator Pencarian (Trik Pencarian Lanjutan)</h4>
+            <table class="operator-table">
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Fungsi</th>
+                        <th>Contoh Penggunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>" " (tanda kutip)</strong></td>
+                        <td>Mencari frasa eksak (kata persis seperti yang diketik)</td>
+                        <td><em>"cara membuat presentasi yang baik"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>- (tanda minus)</strong></td>
+                        <td>Mengecualikan kata tertentu</td>
+                        <td><em>jaguar -mobil</em> (hasil tentang hewan, bukan mobil)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>site:</strong></td>
+                        <td>Mencari hanya di situs tertentu</td>
+                        <td><em>site:kompas.com teknologi</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>filetype:</strong></td>
+                        <td>Mencari dokumen dengan format tertentu</td>
+                        <td><em>filetype:pdf laporan keuangan</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>3. Gunakan Fitur Pencarian Lanjutan</h4>
+            <p>
+                Mesin pencari seperti Google menyediakan halaman <strong>"Pencarian Lanjutan"</strong> (Advanced Search) yang memungkinkan kita menyaring hasil berdasarkan:
+            </p>
+            <ul>
+                <li>Waktu (misalnya: artikel dari tahun lalu)</li>
+                <li>Jenis konten (gambar, berita, video)</li>
+                <li>Wilayah atau bahasa tertentu</li>
+            </ul>
+
+            <!-- D. LITERASI INFORMASI -->
+            <h3>D. LITERASI INFORMASI: MENJADI PEMAKAI CERDAS</h3>
+            <p>
+                <strong>Literasi informasi</strong> adalah kemampuan untuk menemukan, mengevaluasi, dan menggunakan informasi dengan bijak. Ini sangat penting karena tidak semua informasi di internet benar.
+            </p>
+
+            <h4>1. Pilih Sumber yang Kredibel</h4>
+            <p>Lebih baik menggunakan informasi dari:</p>
+            <ul>
+                <li>🏛️ Situs pemerintah (<strong>.go.id</strong>)</li>
+                <li>🎓 Situs pendidikan (<strong>.ac.id</strong> atau <strong>.edu</strong>)</li>
+                <li>📢 Situs organisasi resmi (<strong>.org</strong>)</li>
+                <li>📰 Media berita terpercaya</li>
+            </ul>
+            <div class="warning-box">
+                <p style="margin-bottom:0;">
+                    <strong>⚠️ Hindari</strong> mengambil informasi dari blog pribadi atau forum yang tidak jelas kebenarannya.
+                </p>
+            </div>
+
+            <h4>2. Lakukan Verifikasi (Cek-Cek Ulang)</h4>
+            <p>
+                Jangan langsung percaya pada satu sumber saja. Lakukan <strong>cross-check</strong> atau bandingkan informasi dari beberapa sumber berbeda. Jika sebuah informasi hanya ditemukan di satu situs yang mencurigakan, kemungkinan kebenarannya patut dipertanyakan.
+            </p>
+
+            <h4>3. Waspadai "Filter Bubble"</h4>
+            <p>
+                Mesin pencari sering menampilkan informasi yang sesuai dengan kebiasaan pencarian kita sebelumnya. Ini disebut <strong>gelembung informasi (filter bubble)</strong>. Akibatnya, kita mungkin hanya terpapar pada satu sudut pandang saja. Untuk menghindarinya, cobalah mencari dengan kata kunci yang berbeda atau menggunakan mesin pencari lain.
+            </p>
+
+            <h4>4. Catat Sumber Referensi</h4>
+            <p>
+                Biasakan mencatat sumber informasi yang kita gunakan sejak awal. Ini akan memudahkan kita saat membuat daftar pustaka dan merupakan bentuk penghargaan terhadap hak cipta orang lain.
+            </p>
+
+            <!-- E. RANGKUMAN -->
+            <h3>E. RANGKUMAN</h3>
+            <ul>
+                <li>🔍 Mesin pencari adalah alat untuk mencari informasi di internet menggunakan kata kunci.</li>
+                <li>⚙️ Cara kerja mesin pencari melalui 3 tahap: <strong>Crawling</strong> (menjelajah), <strong>Indexing</strong> (mengindeks), dan <strong>Serving Results</strong> (menyajikan hasil).</li>
+                <li>💡 Untuk hasil pencarian yang lebih tepat, gunakan kata kunci spesifik dan operator pencarian seperti tanda kutip (<strong>" "</strong>), tanda minus (<strong>-</strong>), <strong>site:</strong>, atau <strong>filetype:</strong>.</li>
+                <li>📚 Literasi informasi adalah kemampuan menemukan dan mengevaluasi informasi. Selalu pilih sumber kredibel (situs pemerintah, pendidikan, atau media terpercaya) dan verifikasi informasi dari beberapa sumber.</li>
+                <li>🔮 Waspadai <strong>"filter bubble"</strong> yang membuat kita hanya melihat satu sisi informasi saja.</li>
+            </ul>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-mesin-pencari.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+    <title>Produksi & Diseminasi Konten • EduInformatika</title>
+    <link rel="stylesheet" href="desain.css" />
+    <style>
+        .materi-content {
+            background: white;
+            border-radius: 28px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f6;
+            margin-bottom: 30px;
+        }
+        .materi-content h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0b2b5c;
+            border-bottom: 4px solid #1a4a7a;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .materi-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a4a7a;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+        .materi-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a5a8a;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        .materi-content p {
+            margin-bottom: 14px;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        .materi-content ul,
+        .materi-content ol {
+            margin: 10px 0 16px 22px;
+        }
+        .materi-content li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+        .materi-content .highlight-box {
+            background: #f0f6fe;
+            border-left: 6px solid #1a4a7a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .materi-content .highlight-box strong {
+            color: #0b2b5c;
+        }
+        .materi-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 20px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .materi-content table th {
+            background: #1a4a7a;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        .materi-content table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #fafcff;
+        }
+        .materi-content table tr:last-child td {
+            border-bottom: none;
+        }
+        .materi-content .btn-evaluasi {
+            display: inline-block;
+            background: #0b2b5c;
+            color: white;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: 0.25s;
+            margin-top: 20px;
+            box-shadow: 0 4px 12px rgba(11, 43, 92, 0.3);
+        }
+        .materi-content .btn-evaluasi:hover {
+            background: #1a4a7a;
+            transform: scale(1.02);
+            box-shadow: 0 6px 18px rgba(11, 43, 92, 0.4);
+        }
+        .materi-content .btn-wrapper {
+            text-align: center;
+            margin: 30px 0 10px;
+            padding-top: 20px;
+            border-top: 2px solid #e9edf2;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: #4a6a8f;
+            margin-bottom: 16px;
+        }
+        .breadcrumb a {
+            color: #1a4a7a;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .tips-box {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .tips-box strong {
+            color: #1b5e20;
+        }
+        .ai-box {
+            background: #f3e5f5;
+            border-left: 6px solid #6a1b9a;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .ai-box strong {
+            color: #4a148c;
+        }
+        .hardware-table th {
+            background: #0b2b5c !important;
+        }
+        .software-table th {
+            background: #0b2b5c !important;
+        }
+        .diseminasi-table th {
+            background: #0b2b5c !important;
+        }
+        .quote-box {
+            background: #f5f0e8;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #3d2e1e;
+            border: 1px solid #d4c5a9;
+        }
+        .quote-box strong {
+            font-style: normal;
+            color: #0b2b5c;
+        }
+        .contoh-box {
+            background: #e0f2f1;
+            border-left: 6px solid #00695c;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+        .contoh-box strong {
+            color: #00695c;
+        }
+        @media (max-width: 640px) {
+            .materi-content {
+                padding: 18px 14px;
+            }
+            .materi-content h2 {
+                font-size: 1.4rem;
+            }
+            .materi-content h3 {
+                font-size: 1.1rem;
+            }
+            .materi-content table {
+                font-size: 0.7rem;
+            }
+            .materi-content table th,
+            .materi-content table td {
+                padding: 5px 6px;
+            }
+            .materi-content .btn-evaluasi {
+                padding: 12px 28px;
+                font-size: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .quote-box {
+                font-size: 0.95rem;
+                padding: 14px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+
+        <!-- BANNER -->
+        <header class="banner">
+            <h1>
+                📘 LCC Informatika
+                <small>SMPN 2 Talegong • Kabupaten Garut</small>
+            </h1>
+            <div class="badge">🎬 Produksi &amp; Diseminasi Konten</div>
+        </header>
+
+        <!-- MENU BAR -->
+        <nav class="menu-wrap" aria-label="Navigasi utama">
+            <div class="menu-grid">
+                <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+                <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+                <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+                <button class="menu-btn" data-target="sub-etika">⚖️ Etika &amp; Kewargaan</button>
+                <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+                <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+                <button class="menu-btn" data-target="sub-komputasi">🧩 Berpikir Komputasi</button>
+                <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan Digital</button>
+            </div>
+
+            <div id="sub-sistem" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen &amp; Fungsi</a>
+                    <a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a>
+                </div>
+            </div>
+            <div id="sub-pencarian" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a>
+                    <a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a>
+                    <a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a>
+                </div>
+            </div>
+            <div id="sub-etika" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a>
+                    <a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi &amp; Empati</a>
+                    <a href="perundungan.html" class="submenu-item">🚫 Perundungan Digital</a>
+                </div>
+            </div>
+            <div id="sub-jaringan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a>
+                    <a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a>
+                </div>
+            </div>
+            <div id="sub-ruang" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Publik Virtual</a>
+                    <a href="media-pers.html" class="submenu-item">📰 Media Pers Digital</a>
+                    <a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a>
+                </div>
+            </div>
+            <div id="sub-komputasi" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="algoritma.html" class="submenu-item">🧮 Algoritma &amp; Pseudocode</a>
+                    <a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a>
+                    <a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a>
+                </div>
+            </div>
+            <div id="sub-keamanan" class="submenu-overlay">
+                <div class="submenu-group">
+                    <a href="malware.html" class="submenu-item">🛡️ Malware &amp; Privasi</a>
+                    <a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- KONTEN MATERI -->
+        <main class="materi-content">
+            <div class="breadcrumb">
+                <a href="index.html">🏠 Beranda</a> &gt; <a href="produksi-konten.html">🎬 Produksi &amp; Diseminasi Konten</a>
+            </div>
+
+            <h2>🎬 Produksi &amp; Diseminasi Konten Digital</h2>
+
+            <!-- A. PENDAHULUAN -->
+            <h3>A. PENDAHULUAN</h3>
+            <p>
+                Pernahkah kamu membuat video untuk tugas sekolah, mendesain poster kegiatan OSIS, atau mengunggah konten kreatif di media sosial? Jika pernah, berarti kamu telah terlibat dalam <strong>produksi konten digital</strong>. Namun, tahukah kamu bahwa di balik konten-konten yang kita lihat sehari-hari, ada berbagai perangkat teknologi digital yang digunakan—mulai dari yang sederhana hingga yang canggih?
+            </p>
+            <p>
+                <strong>Produksi konten digital</strong> adalah proses menciptakan berbagai bentuk media seperti teks, gambar, audio, dan video menggunakan perangkat teknologi digital. <strong>Diseminasi konten</strong> adalah proses menyebarluaskan konten tersebut kepada khalayak melalui berbagai platform digital seperti media sosial, website, atau aplikasi pesan. Keduanya merupakan dua sisi dari satu koin: tanpa produksi yang baik, tidak ada konten untuk disebarkan; tanpa diseminasi yang tepat, konten tidak akan menjangkau audiens yang dituju.
+            </p>
+
+            <!-- B. PERANGKAT PRODUKSI -->
+            <h3>B. PERANGKAT TEKNOLOGI UNTUK PRODUKSI KONTEN</h3>
+
+            <h4>1. Perangkat Keras (Hardware)</h4>
+            <p>Produksi konten digital membutuhkan perangkat fisik yang memadai:</p>
+
+            <table class="hardware-table">
+                <thead>
+                    <tr>
+                        <th>Perangkat</th>
+                        <th>Fungsi dalam Produksi Konten</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>💻 Komputer/Laptop</strong></td>
+                        <td>Perangkat utama untuk mengolah teks, gambar, video, dan audio.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📱 Smartphone</strong></td>
+                        <td>Perangkat serbaguna yang dapat digunakan untuk merekam video, mengambil foto, dan mengedit konten secara langsung.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📷 Kamera</strong></td>
+                        <td>Untuk mengambil foto dan video berkualitas tinggi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎤 Mikrofon</strong></td>
+                        <td>Untuk merekam suara/narasi dengan kualitas jernih.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💡 Lighting/Pencahayaan</strong></td>
+                        <td>Untuk mendukung kualitas visual agar lebih profesional.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight-box" style="background:#e3f2fd; border-left-color:#0d47a1;">
+                <p style="margin-bottom:0;">
+                    💡 Menariknya, perkembangan teknologi kini memungkinkan produksi konten yang dulu membutuhkan peralatan besar dan kru lengkap, kini dapat dilakukan hanya dengan satu laptop dan perangkat lunak AI. Ini membuka peluang bagi siapa pun, termasuk pelajar, untuk berkarya.
+                </p>
+            </div>
+
+            <h4>2. Perangkat Lunak (Software) untuk Produksi</h4>
+            <p>Berbagai aplikasi dan platform digunakan dalam proses produksi konten:</p>
+
+            <table class="software-table">
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Contoh Aplikasi</th>
+                        <th>Kegunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Desain Grafis &amp; Visual</strong></td>
+                        <td>Canva, Adobe InDesign, Pixelmator Pro</td>
+                        <td>Membuat poster, pamflet, logo, dan konten media sosial</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pengolahan Video</strong></td>
+                        <td>Final Cut Pro, CapCut, Hailuo</td>
+                        <td>Mengedit video, menambahkan efek, dan menyusun cerita visual</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pengolahan Audio/Musik</strong></td>
+                        <td>Logic Pro</td>
+                        <td>Membuat musik, rekaman suara, dan audio naratif</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Penulisan &amp; Naskah</strong></td>
+                        <td>ChatGPT, Gemini, Microsoft Copilot</td>
+                        <td>Menyusun ide, menulis naskah, dan mengembangkan konsep konten</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Produktivitas Visual</strong></td>
+                        <td>Keynote, Pages, Numbers</td>
+                        <td>Menyusun proposal, presentasi bisnis, dan perencanaan keuangan</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>3. Peran Kecerdasan Buatan (AI) dalam Produksi Konten</h4>
+            <div class="ai-box">
+                <p style="margin-bottom:0;">
+                    <strong>🤖 Salah satu perubahan terbesar</strong> dalam produksi konten digital adalah pemanfaatan <strong>AI generatif</strong>. AI kini tidak hanya menjadi alat bantu, tetapi telah menjadi sistem yang mampu meniru kebiasaan manusia dalam proses pencarian informasi, penyusunan ide, hingga menghasilkan konten baru.
+                </p>
+            </div>
+
+            <p><strong>Contoh pemanfaatan AI dalam produksi konten:</strong></p>
+            <ul>
+                <li><strong>📝 Pra-produksi:</strong> AI membantu menyusun ide cerita, menulis naskah, dan membuat konsep visual.</li>
+                <li><strong>🎬 Produksi:</strong> AI digunakan untuk membuat gambar tambahan, audio naratif, dan efek visual.</li>
+                <li><strong>✂️ Pasca-produksi:</strong> AI mempercepat proses editing video, pencarian konten dalam arsip besar, dan optimalisasi hasil akhir.</li>
+            </ul>
+
+            <div class="stats-box">
+                <p style="margin-bottom:0;">
+                    <strong>📊 Fakta Menarik:</strong> Indonesia menempati posisi ketiga dalam tingkat penggunaan AI di dunia, dengan <strong>50% karyawan</strong> menggunakan AI setiap minggu dan <strong>21%</strong> menggunakannya setiap hari.
+                </p>
+            </div>
+
+            <div class="highlight-box" style="background:#fef9e7; border-left-color:#b8730e;">
+                <p style="margin-bottom:0;">
+                    <strong>⚠️ Penting untuk diingat:</strong> Meskipun AI sangat membantu, <strong>ide utama dan kreativitas tetap berasal dari manusia</strong>. Seperti yang ditekankan dalam pelatihan produksi konten, "footage utama harus tetap orisinal, karena ide yang dihasilkan oleh manusia dalam proses kreatif tidak bisa tergantikan oleh mesin". AI adalah alat bantu, bukan pengganti kreativitas manusia.
+                </p>
+            </div>
+
+            <!-- C. PERANGKAT DISEMINASI -->
+            <h3>C. PERANGKAT TEKNOLOGI UNTUK DISEMINASI KONTEN</h3>
+            <p>Setelah konten diproduksi, tahap selanjutnya adalah <strong>diseminasi</strong>—menyebarluaskan konten kepada audiens yang dituju.</p>
+
+            <h4>1. Platform Digital untuk Diseminasi</h4>
+            <table class="diseminasi-table">
+                <thead>
+                    <tr>
+                        <th>Platform</th>
+                        <th>Karakteristik</th>
+                        <th>Contoh Penggunaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🌐 Website</strong></td>
+                        <td>Pusat informasi yang dapat diakses kapan saja</td>
+                        <td>Media pers digital, portal informasi resmi, blog pribadi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📱 Media Sosial (Instagram, TikTok, YouTube)</strong></td>
+                        <td>Jangkauan luas, interaksi dua arah, konten visual</td>
+                        <td>Menyebarkan konten edukasi, promosi, dan informasi publik</td>
+                    </tr>
+                    <tr>
+                        <td><strong>💬 Aplikasi Pesan (WhatsApp, Telegram)</strong></td>
+                        <td>Penyebaran cepat ke komunitas terbatas</td>
+                        <td>Grup kelas, komunitas, dan forum diskusi</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📚 Platform Kolaborasi (Google Classroom, Teams)</strong></td>
+                        <td>Pembelajaran dan kerja sama tim</td>
+                        <td>Distribusi materi pembelajaran dan tugas</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>2. Strategi Diseminasi yang Efektif</h4>
+            <p>Berdasarkan studi tentang efektivitas diseminasi konten di media sosial, ada beberapa faktor yang memengaruhi keberhasilan penyebaran konten:</p>
+            <ul>
+                <li><strong>📋 Kelengkapan Informasi:</strong> Konten harus menyajikan informasi yang utuh dan jelas.</li>
+                <li><strong>🎨 Kualitas Visual:</strong> Foto dan elemen visual yang menarik meningkatkan daya tarik.</li>
+                <li><strong>✍️ Tata Bahasa yang Baik:</strong> Penyampaian yang komunikatif dan mudah dipahami.</li>
+            </ul>
+            <div class="tips-box">
+                <p style="margin-bottom:0;">
+                    💡 Penelitian tentang konten Instagram pemerintah menunjukkan bahwa konten dengan unsur <strong>edukatif</strong> cenderung menghasilkan tingkat interaksi tertinggi dari audiens. Ini menunjukkan bahwa konten yang bermanfaat dan informatif lebih mudah diterima dan disebarluaskan oleh masyarakat.
+                </p>
+            </div>
+
+            <h4>3. Tantangan dalam Diseminasi</h4>
+            <p>Meskipun platform digital memudahkan penyebaran informasi, ada beberapa tantangan yang perlu diperhatikan:</p>
+            <ul>
+                <li><strong>📖 Literasi Audiens:</strong> Tidak semua audiens memiliki kemampuan yang sama dalam memahami dan memverifikasi informasi.</li>
+                <li><strong>🔄 Perubahan Perilaku Audiens:</strong> Masyarakat kini lebih menyukai konten berbasis video pendek yang informatif dan mudah dicerna.</li>
+                <li><strong>🔮 Filter Bubble:</strong> Algoritma platform cenderung menampilkan konten yang sesuai dengan preferensi pengguna, sehingga jangkauan konten bisa terbatas pada kelompok tertentu.</li>
+            </ul>
+
+            <!-- D. CONTOH PENERAPAN -->
+            <h3>D. CONTOH PENERAPAN PRODUKSI DAN DISEMINASI KONTEN</h3>
+
+            <div class="contoh-box">
+                <h4 style="color:#00695c; margin-top:0;">1. Di Lingkungan Sekolah</h4>
+                <ul style="margin-bottom:0;">
+                    <li><strong>Produksi:</strong> Siswa membuat video edukasi tentang cara menyaring informasi menggunakan aplikasi Canva dan CapCut.</li>
+                    <li><strong>Diseminasi:</strong> Video diunggah ke YouTube dan Instagram sekolah untuk menjangkau siswa lain dan masyarakat luas.</li>
+                </ul>
+            </div>
+
+            <div class="contoh-box">
+                <h4 style="color:#00695c; margin-top:0;">2. Pemerintah dan Layanan Publik</h4>
+                <ul style="margin-bottom:0;">
+                    <li><strong>Produksi:</strong> Perangkat kelurahan membuat poster dan pamflet informasi layanan publik menggunakan Canva dan Adobe InDesign.</li>
+                    <li><strong>Diseminasi:</strong> Konten disebarkan melalui website dan media sosial resmi kelurahan.</li>
+                </ul>
+            </div>
+
+            <div class="contoh-box">
+                <h4 style="color:#00695c; margin-top:0;">3. Industri Media</h4>
+                <ul style="margin-bottom:0;">
+                    <li><strong>Produksi:</strong> Media menggunakan AI untuk mencari konten dari arsip besar (ViVi) dan mengolahnya menjadi konten baru (VidioGen).</li>
+                    <li><strong>Diseminasi:</strong> Konten disiarkan melalui platform digital seperti YouTube dan aplikasi streaming.</li>
+                </ul>
+            </div>
+
+            <!-- E. RANGKUMAN -->
+            <h3>E. RANGKUMAN</h3>
+            <ul>
+                <li>📝 <strong>Produksi konten digital</strong> adalah proses menciptakan berbagai bentuk media (teks, gambar, audio, video) menggunakan perangkat teknologi digital. <strong>Diseminasi konten</strong> adalah proses menyebarluaskan konten kepada audiens melalui platform digital.</li>
+                <li>🖥️ <strong>Perangkat keras (hardware)</strong> untuk produksi konten meliputi komputer/laptop, smartphone, kamera, mikrofon, dan perlengkapan pencahayaan. Perkembangan teknologi kini memungkinkan produksi konten berkualitas dengan perangkat yang lebih sederhana.</li>
+                <li>📦 <strong>Perangkat lunak (software)</strong> yang umum digunakan: Canva dan Adobe InDesign untuk desain visual, Final Cut Pro dan CapCut untuk editing video, serta ChatGPT dan Gemini untuk menyusun ide dan naskah.</li>
+                <li>🤖 <strong>Kecerdasan Buatan (AI)</strong> telah mengubah lanskap produksi konten dengan membantu di semua tahapan—dari pra-produksi, produksi, hingga pasca-produksi. Namun, AI adalah alat bantu; <strong>kreativitas dan etika manusia tetap menjadi inti</strong> dari proses kreatif.</li>
+                <li>📡 <strong>Platform diseminasi</strong> meliputi website, media sosial (Instagram, TikTok, YouTube), dan aplikasi pesan. Efektivitas diseminasi dipengaruhi oleh kelengkapan informasi, kualitas visual, dan tata bahasa yang baik.</li>
+                <li>⚠️ <strong>Tantangan</strong> dalam diseminasi antara lain literasi audiens yang beragam, perubahan preferensi audiens terhadap konten video pendek, dan keterbatasan jangkauan akibat algoritma platform.</li>
+            </ul>
+
+            <!-- QUOTE -->
+            <div class="quote-box">
+                "Di era digital, setiap orang bisa menjadi kreator. Namun, kemampuan terbaik adalah bukan sekadar membuat konten, tetapi membuat konten yang bermanfaat, etis, dan mampu menginspirasi perubahan positif bagi banyak orang."
+            </div>
+
+            <!-- TOMBOL EVALUASI -->
+            <div class="btn-wrapper">
+                <a href="evaluasi-produksi-konten.html" class="btn-evaluasi">
+                    📝 Evaluasi Pemahaman
+                </a>
+                <p style="margin-top:12px; font-size:0.85rem; color:#4a6a8f;">
+                    Klik tombol di atas untuk menguji pemahamanmu tentang materi ini.
+                </p>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span>📅 Diterbitkan: 2 Agustus 2026</span>
+            <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+            <span>⚡ Materi LCC Informatika</span>
+            <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">
+                Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr. untuk kepentingan pendidikan.
+            </span>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
