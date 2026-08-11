@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+  <title>Evaluasi • Ruang Publik Virtual</title>
+  <link rel="stylesheet" href="desain.css" />
+  <style>
+    .materi-content {
+      background: white;
+      border-radius: 28px;
+      padding: 28px 22px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+      border: 1px solid #eef2f6;
+      margin-bottom: 30px;
+    }
+    .materi-content h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #0b2b5c;
+      border-bottom: 4px solid #1a4a7a;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    .materi-content .identitas-form {
+      background: #f4f8fe;
+      border-radius: 24px;
+      padding: 20px 18px;
+      margin-bottom: 30px;
+      border: 1px solid #d8e2ee;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px 20px;
+    }
+    .materi-content .identitas-form label {
+      font-weight: 600;
+      color: #0b2b5c;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .materi-content .identitas-form input {
+      border: 1px solid #cbd5e1;
+      border-radius: 40px;
+      padding: 10px 16px;
+      font-size: 0.95rem;
+      background: white;
+      min-width: 160px;
+      flex: 1;
+    }
+    .materi-content .identitas-form input:focus {
+      outline: 2px solid #1a4a7a;
+      border-color: transparent;
+    }
+    .soal-item {
+      background: #fafcff;
+      border-radius: 20px;
+      padding: 18px 18px 12px;
+      margin-bottom: 22px;
+      border: 1px solid #e9edf2;
+    }
+    .soal-item .nomor {
+      font-weight: 700;
+      color: #1a4a7a;
+      background: #e2eaf6;
+      display: inline-block;
+      padding: 0 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+    .soal-item .pertanyaan {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #0b2b5c;
+    }
+    .soal-item .opsi {
+      display: block;
+      margin: 4px 0;
+      padding: 4px 0 4px 26px;
+      position: relative;
+    }
+    .soal-item .opsi input {
+      margin-right: 8px;
+    }
+    .soal-item .jawaban-singkat {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px 14px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      font-size: 0.95rem;
+      margin-top: 6px;
+    }
+    .soal-item .jawaban-singkat:focus {
+      outline: 2px solid #1a4a7a;
+      border-color: transparent;
+    }
+    .soal-item .match-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin: 8px 0;
+      align-items: center;
+    }
+    .soal-item .match-row select {
+      padding: 6px 12px;
+      border-radius: 30px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-size: 0.9rem;
+    }
+    .soal-item .match-row select:focus {
+      outline: 2px solid #1a4a7a;
+    }
+    .soal-item .benar-salah {
+      display: flex;
+      gap: 20px;
+      margin-top: 6px;
+    }
+    .soal-item .benar-salah label {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 500;
+    }
+    .btn-kirim {
+      display: inline-block;
+      background: #0b2b5c;
+      color: white;
+      padding: 16px 48px;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.25s;
+      margin: 20px 0 10px;
+      box-shadow: 0 4px 12px rgba(11,43,92,0.3);
+      width: 100%;
+      text-align: center;
+    }
+    .btn-kirim:hover {
+      background: #1a4a7a;
+      transform: scale(1.01);
+    }
+    .hasil-box {
+      background: #f0f6fe;
+      border-radius: 28px;
+      padding: 24px 22px;
+      margin-top: 30px;
+      border-left: 8px solid #1a4a7a;
+      display: none;
+    }
+    .hasil-box.show {
+      display: block;
+    }
+    .hasil-box .skor {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: #0b2b5c;
+    }
+    .hasil-box .predikat {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #1a4a7a;
+      margin-top: 6px;
+    }
+    .hasil-box .identitas-hasil {
+      background: white;
+      border-radius: 20px;
+      padding: 12px 18px;
+      margin: 16px 0 0;
+      border: 1px solid #d8e2ee;
+      font-size: 0.95rem;
+    }
+    .breadcrumb {
+      font-size: 0.85rem;
+      color: #4a6a8f;
+      margin-bottom: 16px;
+    }
+    .breadcrumb a {
+      color: #1a4a7a;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    @media (max-width: 640px) {
+      .materi-content { padding: 18px 14px; }
+      .materi-content .identitas-form { flex-direction: column; align-items: stretch; }
+      .soal-item { padding: 14px 12px; }
+      .soal-item .match-row { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <header class="banner">
+    <h1>📘 LCC Informatika <small>SMPN 2 Talegong • Kabupaten Garut</small></h1>
+    <div class="badge">📝 Evaluasi • Ruang Publik Virtual</div>
+  </header>
+
+  <nav class="menu-wrap" aria-label="Navigasi utama">
+    <div class="menu-grid">
+      <a href="index.html" class="menu-btn" style="text-decoration:none;">🏠 Beranda</a>
+      <button class="menu-btn" data-target="sub-sistem">💻 Sistem Komputer</button>
+      <button class="menu-btn" data-target="sub-pencarian">🔍 Pencarian Info</button>
+      <button class="menu-btn" data-target="sub-etika">⚖️ Etika</button>
+      <button class="menu-btn" data-target="sub-jaringan">🌐 Jaringan</button>
+      <button class="menu-btn" data-target="sub-ruang">📢 Ruang Publik</button>
+      <button class="menu-btn" data-target="sub-komputasi">🧩 Komputasi</button>
+      <button class="menu-btn" data-target="sub-keamanan">🔒 Keamanan</button>
+    </div>
+    <!-- overlay submenu -->
+    <div id="sub-sistem" class="submenu-overlay"><div class="submenu-group"><a href="sistem-komponen.html" class="submenu-item">⚙️ Komponen & Fungsi</a><a href="aplikasi-dasar.html" class="submenu-item">📄 Aplikasi Dasar</a></div></div>
+    <div id="sub-pencarian" class="submenu-overlay"><div class="submenu-group"><a href="mesin-pencari.html" class="submenu-item">🔎 Mesin Pencari</a><a href="kredibilitas.html" class="submenu-item">✅ Kredibilitas</a><a href="fakta-opini.html" class="submenu-item">📌 Fakta/Opini/Hoaks</a></div></div>
+    <div id="sub-etika" class="submenu-overlay"><div class="submenu-group"><a href="jejak-digital.html" class="submenu-item">🕊️ Jejak Digital</a><a href="toleransi-digital.html" class="submenu-item">🤝 Toleransi</a><a href="perundungan.html" class="submenu-item">🚫 Perundungan</a></div></div>
+    <div id="sub-jaringan" class="submenu-overlay"><div class="submenu-group"><a href="jaringan-lokal.html" class="submenu-item">📶 Jaringan Lokal</a><a href="internet-nirkabel.html" class="submenu-item">📡 Internet Nirkabel</a></div></div>
+    <div id="sub-ruang" class="submenu-overlay"><div class="submenu-group"><a href="ruang-virtual.html" class="submenu-item">🌍 Ruang Virtual</a><a href="media-pers.html" class="submenu-item">📰 Media Pers</a><a href="produksi-konten.html" class="submenu-item">🎬 Produksi Konten</a></div></div>
+    <div id="sub-komputasi" class="submenu-overlay"><div class="submenu-group"><a href="algoritma.html" class="submenu-item">🧮 Algoritma</a><a href="data-terstruktur.html" class="submenu-item">📊 Data Terstruktur</a><a href="lembar-kerja.html" class="submenu-item">📑 Lembar Kerja</a></div></div>
+    <div id="sub-keamanan" class="submenu-overlay"><div class="submenu-group"><a href="malware.html" class="submenu-item">🛡️ Malware</a><a href="identitas-digital.html" class="submenu-item">🆔 Identitas Digital</a></div></div>
+  </nav>
+
+  <main class="materi-content" id="evaluasiContainer">
+    <div class="breadcrumb"><a href="index.html">🏠 Beranda</a> &gt; <a href="ruang-virtual.html">🌍 Ruang Publik Virtual</a> &gt; 📝 Evaluasi</div>
+    <h2>📝 Evaluasi Ruang Publik Virtual</h2>
+    <p>Jawablah 30 soal berikut. Terdapat pilihan ganda, isian singkat, pilihan ganda kompleks, menjodohkan, dan benar/salah. <strong>50% soal berbasis masalah</strong> (terapan sehari-hari).</p>
+
+    <!-- Form Identitas -->
+    <div class="identitas-form" id="identitasForm">
+      <label>👤 Nama: <input type="text" id="namaSiswa" placeholder="Nama lengkap" value=""></label>
+      <label>📚 Kelas: <input type="text" id="kelasSiswa" placeholder="Kelas (contoh: 8A)" value=""></label>
+    </div>
+
+    <div id="soalArea" class="soal-wrapper"></div>
+    <button class="btn-kirim" id="btnKirim">✅ Kirim Jawaban & Lihat Skor</button>
+
+    <!-- Hasil -->
+    <div class="hasil-box" id="hasilBox">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div><span class="skor" id="skorAkhir">0</span> / 30</div>
+        <div class="predikat" id="predikatAkhir">🏆</div>
+      </div>
+      <div class="identitas-hasil" id="identitasHasil">👤 Nama: — &nbsp;|&nbsp; 📚 Kelas: —</div>
+      <div style="margin-top: 16px; font-size:0.95rem; background: #e6edf6; padding: 10px 16px; border-radius: 40px;">
+        💡 <span id="pesanMotivasi">Tetap semangat belajar!</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>📅 Diterbitkan: 2 Agustus 2026</span>
+    <span class="copy">© 2026 EduInformatika • SMPN 2 Talegong</span>
+    <span>⚡ Materi LCC Informatika</span>
+    <span style="display:block; margin-top:6px; font-size:0.7rem; opacity:0.7;">Dibuat oleh Kiki Husni Kamil, S.Pd.,Gr.</span>
+  </footer>
+</div>
+<script src="script.js"></script>
+<script>
+  (function() {
+    // ---------- Kumpulan Soal (30) ----------
+    // 15 soal berbasis masalah (isProblem: true) + 15 non-problem
+    const bankSoal = [
+      // 1. PG
+      { tipe: 'pg', isProblem: false, pertanyaan: 'Platform digital yang dapat diakses banyak orang untuk komunikasi dan pertukaran informasi secara daring disebut…', opsi: ['Ruang fisik', 'Ruang publik virtual', 'Ruang pribadi', 'Ruang kerja'], jawaban: 1 },
+      // 2. PG (masalah)
+      { tipe: 'pg', isProblem: true, pertanyaan: 'Siti sering berbagi foto dan cerita di Instagram. Instagram termasuk dalam jenis ruang publik virtual yaitu…', opsi: ['Forum diskusi', 'Media sosial', 'Platform kolaborasi', 'Aplikasi pesan publik'], jawaban: 1 },
+      // 3. PG
+      { tipe: 'pg', isProblem: false, pertanyaan: 'Karakteristik ruang publik virtual yang membuat interaksi cenderung cepat dan spontan adalah…', opsi: ['Respon lambat', 'Respon cepat', 'Tidak ada interaksi', 'Hanya satu arah'], jawaban: 1 },
+      // 4. PG (masalah)
+      { tipe: 'pg', isProblem: true, pertanyaan: 'Budi bergabung dalam grup diskusi tentang lingkungan di Reddit. Ini adalah contoh dari…', opsi: ['Media sosial', 'Forum diskusi online', 'Platform hiburan digital', 'Aplikasi pesan publik'], jawaban: 1 },
+      // 5. PG
+      { tipe: 'pg', isProblem: false, pertanyaan: 'Contoh platform kolaborasi digital untuk pembelajaran daring adalah…', opsi: ['Instagram', 'Google Classroom', 'Reddit', 'Kaskus'], jawaban: 1 },
+      // 6. PG (masalah)
+      { tipe: 'pg', isProblem: true, pertanyaan: 'Rina menggunakan Google Classroom untuk mengerjakan tugas kelompok. Ini termasuk dalam jenis ruang publik virtual…', opsi: ['Media sosial', 'Forum diskusi', 'Platform kolaborasi digital', 'Ruang hiburan'], jawaban: 2 },
+      // 7. PG
+      { tipe: 'pg', isProblem: false, pertanyaan: 'Salah satu karakteristik ruang publik virtual adalah tanpa "penjaga gerbang" (gatekeeper). Ini berarti…', opsi: ['Semua informasi sudah disaring', 'Siapa pun bisa menyampaikan gagasan secara langsung', 'Hanya admin yang bisa memposting', 'Tidak ada interaksi'], jawaban: 1 },
+      // 8. PG (masalah)
+      { tipe: 'pg', isProblem: true, pertanyaan: 'Andi sering bermain game online dengan teman-teman dari kota lain. Game online termasuk dalam jenis ruang publik virtual…', opsi: ['Media sosial', 'Forum diskusi', 'Platform kolaborasi', 'Ruang hiburan digital'], jawaban: 3 },
+      // 9. PG
+      { tipe: 'pg', isProblem: false, pertanyaan: 'Kecenderungan pengguna ruang publik virtual untuk hanya melihat informasi yang sesuai dengan selera pribadi disebut…', opsi: ['Ruang terbuka', 'Koridor informasi', 'Partisipasi publik', 'Kolaborasi'], jawaban: 1 },
+      // 10. PG (masalah)
+      { tipe: 'pg', isProblem: true, pertanyaan: 'Sekolah menggunakan Microsoft Teams untuk rapat online. Ini adalah contoh pemanfaatan ruang publik virtual sebagai…', opsi: ['Media sosial', 'Forum hiburan', 'Platform kolaborasi profesional', 'Aplikasi pesan'], jawaban: 2 },
+      // 11. Isian singkat
+      { tipe: 'isian', isProblem: false, pertanyaan: 'Ruang publik virtual sering disebut sebagai … kota di dunia maya.', jawaban: 'alun-alun' },
+      // 12. Isian (masalah)
+      { tipe: 'isian', isProblem: true, pertanyaan: 'Di ruang publik virtual, siapa pun bisa menyampaikan pendapat tanpa melalui … seperti di media konvensional.', jawaban: 'penyaring' },
+      // 13. Isian
+      { tipe: 'isian', isProblem: false, pertanyaan: 'Platform blog seperti WordPress dan Medium termasuk dalam jenis ruang publik virtual yaitu aplikasi pesan …', jawaban: 'publik' },
+      // 14. Isian (masalah)
+      { tipe: 'isian', isProblem: true, pertanyaan: 'Ketika berdiskusi di forum online, kita harus tetap menerapkan … seperti di dunia nyata.', jawaban: 'etika' },
+      // 15. Isian
+      { tipe: 'isian', isProblem: false, pertanyaan: 'Ruang publik virtual memungkinkan orang dari berbagai … untuk bertemu dan berinteraksi.', jawaban: 'kota' },
+      // 16. PG kompleks (pilih 2 jawaban benar)
+      { tipe: 'pgk', isProblem: false, pertanyaan: 'Yang termasuk ruang publik virtual adalah… (pilih 2)', opsi: ['Instagram', 'Google Classroom', 'Ruang kelas fisik', 'Taman kota'], jawaban: [0,1] },
+      // 17. PGK (masalah)
+      { tipe: 'pgk', isProblem: true, pertanyaan: 'Manfaat ruang publik virtual adalah… (pilih 2)', opsi: ['Menjembatani keterbatasan fisik', 'Mendorong partisipasi', 'Membatasi akses informasi', 'Mengurangi interaksi'], jawaban: [0,1] },
+      // 18. PGK
+      { tipe: 'pgk', isProblem: false, pertanyaan: 'Karakteristik ruang publik virtual adalah… (pilih 2)', opsi: ['Respon cepat', 'Tanpa gatekeeper', 'Hanya untuk satu arah', 'Membutuhkan waktu lama'], jawaban: [0,1] },
+      // 19. PGK (masalah)
+      { tipe: 'pgk', isProblem: true, pertanyaan: 'Contoh pemanfaatan ruang publik virtual di sekolah adalah… (pilih 2)', opsi: ['Google Classroom untuk tugas', 'Grup WhatsApp untuk diskusi kelas', 'Menyimpan buku di perpustakaan', 'Menggunakan papan tulis'], jawaban: [0,1] },
+      // 20. PGK
+      { tipe: 'pgk', isProblem: false, pertanyaan: 'Jenis ruang publik virtual berdasarkan fungsinya adalah… (pilih 2)', opsi: ['Media sosial', 'Forum diskusi', 'Ruang fisik', 'Alun-alun'], jawaban: [0,1] },
+      // 21. Menjodohkan (3 pasang)
+      { tipe: 'jodoh', isProblem: false, pertanyaan: 'Pasangkan jenis ruang publik virtual dengan contohnya.', pasangan: [
+        { kiri: 'Media sosial', kanan: 'Instagram' },
+        { kiri: 'Forum diskusi', kanan: 'Reddit' },
+        { kiri: 'Platform kolaborasi', kanan: 'Google Classroom' }
+      ], jawaban: ['Instagram', 'Reddit', 'Google Classroom'] },
+      // 22. Jodoh (masalah)
+      { tipe: 'jodoh', isProblem: true, pertanyaan: 'Pasangkan situasi dengan jenis ruang publik virtual yang sesuai.', pasangan: [
+        { kiri: 'Berbagi foto liburan', kanan: 'Media sosial' },
+        { kiri: 'Diskusi tentang lingkungan', kanan: 'Forum diskusi' },
+        { kiri: 'Mengerjakan tugas kelompok online', kanan: 'Platform kolaborasi' }
+      ], jawaban: ['Media sosial', 'Forum diskusi', 'Platform kolaborasi'] },
+      // 23. Jodoh
+      { tipe: 'jodoh', isProblem: false, pertanyaan: 'Pasangkan karakteristik dengan penjelasannya.', pasangan: [
+        { kiri: 'Respon cepat', kanan: 'Interaksi instan di ruang virtual' },
+        { kiri: 'Tanpa gatekeeper', kanan: 'Siapa pun bisa menyampaikan gagasan' },
+        { kiri: 'Koridor informasi', kanan: 'Pengguna cenderung melihat info sesuai selera' }
+      ], jawaban: ['Interaksi instan di ruang virtual', 'Siapa pun bisa menyampaikan gagasan', 'Pengguna cenderung melihat info sesuai selera'] },
+      // 24. Jodoh (masalah)
+      { tipe: 'jodoh', isProblem: true, pertanyaan: 'Pasangkan aktivitas dengan platform ruang publik virtual yang tepat.', pasangan: [
+        { kiri: 'Mengikuti akun edukasi', kanan: 'Instagram' },
+        { kiri: 'Berdiskusi di forum komunitas', kanan: 'Kaskus' },
+        { kiri: 'Mengikuti kelas daring', kanan: 'Google Classroom' }
+      ], jawaban: ['Instagram', 'Kaskus', 'Google Classroom'] },
+      // 25. Benar/Salah
+      { tipe: 'bs', isProblem: false, pertanyaan: 'Ruang publik virtual hanya bisa diakses oleh orang-orang dari satu kota saja.', jawaban: false },
+      // 26. BS (masalah)
+      { tipe: 'bs', isProblem: true, pertanyaan: 'Di ruang publik virtual, kita tetap harus menerapkan etika seperti di dunia nyata.', jawaban: true },
+      // 27. BS
+      { tipe: 'bs', isProblem: false, pertanyaan: 'Blog adalah contoh dari media sosial.', jawaban: false },
+      // 28. BS (masalah)
+      { tipe: 'bs', isProblem: true, pertanyaan: 'Game online tidak termasuk dalam ruang publik virtual karena hanya untuk hiburan.', jawaban: false },
+      // 29. BS
+      { tipe: 'bs', isProblem: false, pertanyaan: 'Koridor informasi membuat pengguna hanya melihat informasi yang sesuai dengan seleranya.', jawaban: true },
+      // 30. BS (masalah)
+      { tipe: 'bs', isProblem: true, pertanyaan: 'Ruang publik virtual dapat mendorong partisipasi masyarakat dalam berbagai isu.', jawaban: true }
+    ];
+
+    // Acak urutan soal
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    const soalAcak = shuffleArray([...bankSoal]);
+
+    // Render soal ke DOM
+    const soalArea = document.getElementById('soalArea');
+    function renderSoal() {
+      let html = '';
+      soalAcak.forEach((soal, idx) => {
+        const nomor = idx + 1;
+        html += `<div class="soal-item" data-indeks="${idx}">`;
+        html += `<div class="nomor">Soal ${nomor} ${soal.isProblem ? '🧩' : '📘'}</div>`;
+        html += `<div class="pertanyaan">${soal.pertanyaan}</div>`;
+
+        if (soal.tipe === 'pg') {
+          const opsi = soal.opsi;
+          opsi.forEach((op, i) => {
+            html += `<div class="opsi"><input type="radio" name="q${idx}" value="${i}" id="q${idx}_${i}"> <label for="q${idx}_${i}">${op}</label></div>`;
+          });
+        } else if (soal.tipe === 'isian') {
+          html += `<input type="text" class="jawaban-singkat" name="q${idx}" placeholder="Tulis jawaban..." data-indeks="${idx}">`;
+        } else if (soal.tipe === 'pgk') {
+          const opsi = soal.opsi;
+          opsi.forEach((op, i) => {
+            html += `<div class="opsi"><input type="checkbox" name="q${idx}" value="${i}" id="qk${idx}_${i}"> <label for="qk${idx}_${i}">${op}</label></div>`;
+          });
+        } else if (soal.tipe === 'jodoh') {
+          const pas = soal.pasangan;
+          pas.forEach((p, pi) => {
+            html += `<div class="match-row">
+              <span style="font-weight:500; min-width:100px;">${p.kiri}</span>
+              <select name="q${idx}_${pi}" id="jodoh_${idx}_${pi}">
+                <option value="">-- Pilih --</option>
+                ${pas.map((_, optIdx) => `<option value="${optIdx}">${pas[optIdx].kanan}</option>`).join('')}
+              </select>
+            </div>`;
+          });
+        } else if (soal.tipe === 'bs') {
+          html += `<div class="benar-salah">
+            <label><input type="radio" name="q${idx}" value="true"> ✅ Benar</label>
+            <label><input type="radio" name="q${idx}" value="false"> ❌ Salah</label>
+          </div>`;
+        }
+        html += `</div>`;
+      });
+      soalArea.innerHTML = html;
+    }
+    renderSoal();
+
+    // Fungsi koreksi
+    function koreksi() {
+      let benar = 0;
+      const total = soalAcak.length;
+
+      soalAcak.forEach((soal, idx) => {
+        const container = document.querySelector(`.soal-item[data-indeks="${idx}"]`);
+        if (!container) return;
+        if (soal.tipe === 'pg') {
+          const selected = container.querySelector(`input[name="q${idx}"]:checked`);
+          if (selected && parseInt(selected.value) === soal.jawaban) benar++;
+        } else if (soal.tipe === 'isian') {
+          const input = container.querySelector(`input[name="q${idx}"]`);
+          if (input) {
+            const userAns = input.value.trim().toLowerCase();
+            const correct = soal.jawaban.toLowerCase();
+            if (userAns.includes(correct) || correct.includes(userAns)) benar++;
+          }
+        } else if (soal.tipe === 'pgk') {
+          const checkboxes = container.querySelectorAll(`input[name="q${idx}"]:checked`);
+          const selectedVals = Array.from(checkboxes).map(cb => parseInt(cb.value)).sort();
+          const correct = soal.jawaban.slice().sort();
+          if (selectedVals.length === correct.length && selectedVals.every((v,i) => v === correct[i])) benar++;
+        } else if (soal.tipe === 'jodoh') {
+          let semuaBenar = true;
+          const pas = soal.pasangan;
+          pas.forEach((p, pi) => {
+            const select = container.querySelector(`#jodoh_${idx}_${pi}`);
+            if (select) {
+              const val = parseInt(select.value);
+              const jawabanBenar = soal.jawaban;
+              if (isNaN(val) || pas[val].kanan !== jawabanBenar[pi]) semuaBenar = false;
+            } else semuaBenar = false;
+          });
+          if (semuaBenar) benar++;
+        } else if (soal.tipe === 'bs') {
+          const selected = container.querySelector(`input[name="q${idx}"]:checked`);
+          if (selected) {
+            const userVal = selected.value === 'true';
+            if (userVal === soal.jawaban) benar++;
+          }
+        }
+      });
+      return benar;
+    }
+
+    // Event kirim
+    document.getElementById('btnKirim').addEventListener('click', function() {
+      const nama = document.getElementById('namaSiswa').value.trim() || 'Tidak diisi';
+      const kelas = document.getElementById('kelasSiswa').value.trim() || 'Tidak diisi';
+      const skor = koreksi();
+      document.getElementById('skorAkhir').textContent = skor;
+      document.getElementById('identitasHasil').innerHTML = `👤 Nama: ${nama} &nbsp;|&nbsp; 📚 Kelas: ${kelas}`;
+
+      let predikat = '';
+      let motivasi = '';
+      if (skor >= 27) { predikat = '🏅 Sangat Baik'; motivasi = 'Luar biasa! Kamu sangat paham tentang ruang publik virtual dan jenis-jenisnya.'; }
+      else if (skor >= 22) { predikat = '🌟 Baik'; motivasi = 'Bagus! Tingkatkan lagi pemahamanmu tentang karakteristik ruang publik virtual.'; }
+      else if (skor >= 17) { predikat = '📗 Cukup'; motivasi = 'Perlu belajar lebih giat tentang jenis-jenis dan manfaat ruang publik virtual.'; }
+      else if (skor >= 10) { predikat = '📘 Kurang'; motivasi = 'Ayo ulangi materi dari awal, fokus pada pengertian dan jenis ruang publik virtual.'; }
+      else { predikat = '📕 Perlu Bimbingan'; motivasi = 'Jangan menyerah! Pelajari lagi dasar-dasar ruang publik virtual.'; }
+      document.getElementById('predikatAkhir').textContent = predikat;
+      document.getElementById('pesanMotivasi').textContent = motivasi;
+      document.getElementById('hasilBox').classList.add('show');
+      window.scrollTo({ top: document.getElementById('hasilBox').offsetTop - 20, behavior: 'smooth' });
+    });
+
+  })();
+</script>
+</body>
+</html>
